@@ -13,7 +13,7 @@ grand_parent: Algebra
 
 In this lesson we explain three of the most important subtopics of geometric sequences.
 
-## 1. The General Term
+## The General Term
 
 In a geometric sequence, the $$n$$'th term or general term is:
 
@@ -25,7 +25,7 @@ where $a$ is the first term in our sequence, and the common ratio is $r$.
 
 > **Note:** sequences are discrete functions, so $$n \in \mathbb{N} = \{1,2,3,\ldots \}$$.
 
-To familiarize ourselves with this definition, let's do 2 *easy* examples. Try them on your own first, and then read the intended solution.
+To familiarize ourselves with this definition, let's do 2 *easy* examples. 
 
 ### Example 1
 
@@ -83,9 +83,11 @@ Find the first term and common ratio of each geometric sequence with the followi
     <b>QED</b>
 </details>
 
-## 2. Geometric Mean
+---
 
-The geometric mean is **the middle number $m$ when $a, m,$ and $b$ form a geometric sequence in that order.**
+## Geometric Mean
+
+The geometric mean is **the middle number** $m$, when $a, m,$ and $b$ form a geometric sequence **in that order.**
 
 Consequently we can derive:
 
@@ -116,7 +118,9 @@ Find integer(s) $x$ so that $x, x+4,$ and $4x+10$ form a geometric sequence.
     <b>QED</b>
 </details>
 
-## 3. Recursive Formula
+---
+
+## Recursive Formula
 
 Geometric sequences can also be written through a recursive formula, where the $n$th term is a product of the $(n-1)$th term and the common ratio. 
 In recursive form, the first term must be defined.
@@ -133,6 +137,8 @@ Recursive:
 $$
 t_1=a, \; t_n = t_{n-1} \cdot r, (n=2,3,4,\ldots)
 $$
+
+---
 
 ## Worked Contest Problems
 
@@ -230,6 +236,7 @@ Determine how many of the terms in the sequence are integers.
     <p>
     Therefore, there will be 5 integers in this sequence.
     </p>
+    <b>QED</b>
 </details>
 
 ### Harder Problems
