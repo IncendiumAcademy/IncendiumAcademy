@@ -17,222 +17,258 @@
     "url": "/content/chemistry/organic-chemistry/Nucleophiles,-Electrophiles-and-Arrow-Pushing/",
     "relUrl": "/content/chemistry/organic-chemistry/Nucleophiles,-Electrophiles-and-Arrow-Pushing/"
   },"3": {
+    "doc": "Basic Counting Principles",
+    "title": "Introduction",
+    "content": "In this section we’ll introduce some basic counting principles. A solid understanding of these principles is crucial before progressing into more complicated counting techniques as they are fundamentally inherent in all counting problems. In math problems and even our everyday lives, we often need to enumerate objects and events. For example, we all know how to count the number of students in a class. Or the number of socks in a drawer. However, most counting problems do not involve simply counting a list of items one by one. Thus, we will need better strategies and counting techniques when approaching such problems. ",
+    "url": "/content/math/combinatorics/basic-counting/basic-principles/#introduction",
+    "relUrl": "/content/math/combinatorics/basic-counting/basic-principles/#introduction"
+  },"4": {
+    "doc": "Basic Counting Principles",
+    "title": "The Addition Principle",
+    "content": "Aristotle or whatever ancient philosopher might’ve argued that the whole is greater than the sum of its parts. However, as far as we’re concerned in counting, the whole is equal to the sum of its parts (it might even be less!). The addition principle states that . if there are $k$ events $E_1,E_2,\\dots,E_k$ which happen in $n_1,n_2,\\dots,n_k$ ways respectively, and the ways for the events to occur are pairwise disjoint, then the number of ways for a singular outcome to occur is $n_1+n_2+\\dots+n_k$. Or, in a more set theoretic notation, . Let $S_1, S_2, \\dots, S_k$ be pairwise disjoint sets, $S_i \\cap S_j = \\emptyset,\\ i \\neq j$. Then, . \\[\\left| \\bigcup_{i=1}^{k} S_i \\right| = |S_1 \\cup S_2 \\cup \\dots \\cup S_k| = |S_1| + |S_2| + \\dots + |S_k|\\] Note that there is an emphasis on the events/sets being pairwise disjoint. This means that an outcome for an event is distinct from any other outcome. There should not be any overlaps. Let’s now look at an example problem that uses the addition principle. Example . We want to travel from city $A$ to city $B$. There are $5$ ways to travel by bus, $2$ ways of biking, and $1$ way of walking. How many ways can we travel from $A$ to $B$? . Solution By the addition principle, the total number of ways is $5+2+1=8$. Simple huh? Don't let the simplicity downplay the importance of the addition principle though, you'll be using it a lot in counting problems. However, this is pretty much the full extent of which the addition principle can be used alone. To solve more complicated problems, we will need to combine its use with other counting principles. ",
+    "url": "/content/math/combinatorics/basic-counting/basic-principles/#the-addition-principle",
+    "relUrl": "/content/math/combinatorics/basic-counting/basic-principles/#the-addition-principle"
+  },"5": {
+    "doc": "Basic Counting Principles",
+    "title": "The Multiplication Principle",
+    "content": "The multiplication principle will be involved when events don’t happen in just one step. It states that . Assume an event $E$ can be broken down into $k$ ordered events $E_1,E_2,\\dots,E_K$ and that there are $n_1$ ways for $E_1$ to occur, $n_2$ ways for $E_2$ to occur, ., and $n_k$ ways for $E_k$ to occur. Then the number of ways for $E$ to occur is given by $n_1\\times n_2\\times \\ldots \\times n_k$. Or, in a more set theoretic notation, . Let $S_1 \\times S_2 \\times \\dots \\times S_k = \\{(s_1,s_2,\\dots,s_k)\\mid s_i \\in S_i\\}$ denote the cartesian product of the sets $S_1,S_2,\\dots,S_k$. \\[|S_1 \\times S_2 \\times \\dots \\times S_k| = |S_1| \\times |S_2| \\times \\dots \\times |S_k|\\] One thing to take note of is that the multiplication principle is only directly applicable when the events are independent (the outcome of one event won’t affect the outcomes of another event). If the events are not indenendent then we need to take that into consideration when counting our outcomes. Let’s look at some problems involving the multiplication principle. Example 1 . You have $5$ shirts and $4$ pants. How many outfits can you make that consist of one shirt and one pair of pants. Solution We have $5$ choices for the shirt. Then for each shirt we have $4$ choices for the pants. Therefore the total number of outfits we can form is $4\\times 5=20$. Notice that we could've chosen the pants before the shirt and the total would still remain the same. Example 2 . If there are $6$ ways to get from $A$ to $B$ and $9$ ways to get from $B$ to $C$, how many ways are there to get from $A$ to $C$? . Solution This is another straightforward application of the multiplcation principle. The total number of ways to get from $A$ to $C$ will be $6\\times 9=63$. Example 3 . How many divisors are there of $2^{1}\\times 3^{2} \\times 5^{1} \\times 11^{4} \\times 17^{3}$? . Solution This problem requires a little bit of number theoretic insight. A divisor of $2^{1}\\times 3^{2} \\times 5^{1} \\times 11^{4} \\times 17^{3}$ will be of the form $$2^{a}\\times 3^{b} \\times 5^{c} \\times 11^{d} \\times 17^{e} \\text{, where }0\\le a\\le 1, 0\\le b\\le 2, 0\\le c\\le 1, 0\\le d\\le 4, 0\\le e\\le 3$$ There are $2$ choices for $a$, $3$ choices for $b$, $2$ choices for $c$, $5$ choices for $d$, and $4$ choices for $e$. Therefore, the number of divisors is $2\\times 3 \\times 2 \\times 5 \\times 4 = 240$. Example 4 . How many four-digit numbers have distinct and nonzero digits? . Solution This is an example of a problem which the events are not independent. If we choose a number for the current digit, we can't choose this number for any later digits. So we can't bindly apply the multiplication principle. However, what we can notice is that although the choices themselves are not independent at each step, the number of choices is. For example, the first digit always has $9$ choices, the numbers from $1$ through $9$. Let's say we choose $1$ as our first digit. Then the choices for the second digit are $2,3,\\dots,9$, $8$ numbers in total. What would happen if we choose $2$ as our first digit? The choices for the second digit are $1,3,4,\\dots,9$, also $8$ numbers in total. We can see that no matter what number we choose for our first digit, there will always be $8$ choices for the second digit. There will be $7$ choices for the third digit and $6$ choices for the the fourth digit. Therefore, the total amount of numbers that satisfy the constraints is $9\\times 8\\times 7\\times 6= 3024$. Example 4 is an example of a problem invoving permutations. This lesson will not be going into detail about them. The general idea of a permutation is to count the number of arrangements of some elements from a set. For Example 4, the problem is to count the number of arrangements of $4$ elements from the set $\\{1,2,\\dots,9\\}$. ",
+    "url": "/content/math/combinatorics/basic-counting/basic-principles/#the-multiplication-principle",
+    "relUrl": "/content/math/combinatorics/basic-counting/basic-principles/#the-multiplication-principle"
+  },"6": {
+    "doc": "Basic Counting Principles",
+    "title": "Basic Counting Principles",
+    "content": ". | Introduction | The Addition Principle . | Example | . | The Multiplication Principle . | Example 1 | Example 2 | Example 3 | Example 4 | . | . ",
+    "url": "/content/math/combinatorics/basic-counting/basic-principles/",
+    "relUrl": "/content/math/combinatorics/basic-counting/basic-principles/"
+  },"7": {
     "doc": "Geometric Sequences",
     "title": "1. The General Term",
     "content": "In a geometric sequence, the \\(n\\)‘th term or general term is: . \\[t_n= ar^{n-1}\\] where $a$ is the first term in our sequence, and the common ratio is $r$. Note: sequences are discrete functions, so \\(n \\in \\mathbb{N} = \\{1,2,3,\\ldots \\}\\). To familiarize ourselves with this definition, let’s do 2 easy examples. Try them on your own first, and then read the intended solution. Example 1 . In a geometric sequence, \\(t_3=20\\) and \\(t_6=1280\\). What is the first term? . Solution $$ \\begin{align*} t_3 &amp;= ar^2 = 20\\\\ t_6 &amp;= ar^5 = 1280 \\end{align*} $$ Dividing $t_6$ by $t_3$ gets rid of $a$, and we are left with: $$ r^3 = \\frac{1280}{20} = 64 = 4^3 $$ $$ \\therefore r = 4 $$ Plugging in $r = 4$ into $ar^2 = 20$: $$ \\begin{align*} 16a &amp;=20\\\\ \\therefore a &amp;=5/4 \\end{align*} $$ $\\therefore$ the first term is 5/4. QED Example 2 . Find the first term and common ratio of each geometric sequence with the following general terms $t_n$. | $3 \\cdot 2^{2n+1}$ . | $3^{-n}$ . | . Solution Let the first term be $a$ and the common ration be $r$ for both solutions. 1. $t_n = 3 \\cdot 2^{2n+1} = 6 \\cdot 2^{2n} = 6 \\cdot 4^n = (6 \\cdot 4) \\cdot 4^{n-1} = 24 \\cdot 4^{n-1}$ $\\therefore a = 24$ and $r=4$. 2. $t_n=3^{-n} = 3^{-(n-1)} \\cdot \\frac{1}{3} = \\frac{1}{3} \\cdot (\\frac{1}{3})^{n-1}$ $\\therefore a = \\frac{1}{3}$ and $r=\\frac{1}{3}$. QED ",
     "url": "/content/math/algebra/sequences-and-series/geometric-sequences/#1-the-general-term",
     "relUrl": "/content/math/algebra/sequences-and-series/geometric-sequences/#1-the-general-term"
-  },"4": {
+  },"8": {
     "doc": "Geometric Sequences",
     "title": "2. Geometric Mean",
     "content": "The geometric mean is the middle number $m$ when $a, m,$ and $b$ form a geometric sequence in that order. Consequently we can derive: . \\[\\frac{m}{a}=\\frac{b}{m} = r\\\\\\] \\[\\therefore m^2 = ab\\] In fact, we can extend this theorem. Since all terms are evenly spaced by a ratio $r$, . \\(t_a \\cdot t_b = t_c \\cdot t_d\\), only if $a+b = c+d$. Example 1 . Find integer(s) $x$ so that $x, x+4,$ and $4x+10$ form a geometric sequence. Solution Applying the geometric mean, $(x+4)^2 = x(4x+10)$. We can simply solve for this quadratic for $x=-\\frac{8}{3}$ or $x=2$. Since $x$ must be integer, $\\therefore x=2$. QED ",
     "url": "/content/math/algebra/sequences-and-series/geometric-sequences/#2-geometric-mean",
     "relUrl": "/content/math/algebra/sequences-and-series/geometric-sequences/#2-geometric-mean"
-  },"5": {
+  },"9": {
     "doc": "Geometric Sequences",
     "title": "3. Recursive Formula",
     "content": "Geometric sequences can also be written through a recursive formula, where the $n$th term is a product of the $(n-1)$th term and the common ratio. In recursive form, the first term must be defined. Comparing the explicit (general) and recursive forms: . Explicit: \\(t_n=ar^{n-1}\\) . Recursive: \\(t_1=a, \\; t_n = t_{n-1} \\cdot r, (n=2,3,4,\\ldots)\\) . ",
     "url": "/content/math/algebra/sequences-and-series/geometric-sequences/#3-recursive-formula",
     "relUrl": "/content/math/algebra/sequences-and-series/geometric-sequences/#3-recursive-formula"
-  },"6": {
+  },"10": {
     "doc": "Geometric Sequences",
     "title": "Worked Contest Problems",
     "content": "Below we work through notable problems that have appeared on past contests. Attempt these on your own first, and only reference the solutions if you’re stuck. Simpler Problems . Euclid 2014 6b . The geometric sequence with $n$ terms $t_1, t_2, \\ldots, t_{n-1}, t_n$, has $t_1 t_n = 3$. Also, the product of all $n$ terms equals $59049$. Determine the values of $n$. Solution Here's a scenario where I'd say brute forcing actually works. Evaluating: $$ \\begin{align*} t_1 \\cdot t_2 \\cdot \\ldots \\cdot t_{n-1} \\cdot t_n &amp;=59049\\\\ a \\cdot ar \\cdot \\ldots ar^{n-2} \\cdot ar^{n-1} &amp;= 59049\\\\ (a)^n \\cdot (r \\cdot r^2 \\ldots r^{n-1}) &amp;= 59049\\\\ a^n \\cdot r^{\\frac{1}{2}n(n-1)} &amp;= 59049 \\; \\; (1) \\end{align*} $$ . Now let's look at what else we were given. From $t_1 t_n = 3$, $$ \\begin{align*} (a)(ar^{n-1}) &amp;=3\\\\ a^2 r^{n-1} &amp;=3 \\; \\; \\; \\; \\; \\; (2) \\end{align*} $$ . Note that $(1)$ and $(2)$ are close to each other. We can raise $(2)$ to the $n$th power, getting; $$ \\begin{align*} (a^2 r^{n-1})^n &amp;= 3^n\\\\ a^{2n} r^{n(n-1)} &amp;= 3^n \\end{align*} $$ We can further raise both sides to the $\\frac{1}{2}$ power, getting; $$ \\begin{align*} (a^{2n} r^{n(n-1)})^{\\frac{1}{2}} &amp;= (3^n)^\\frac{1}{2}\\\\\\\\ (a^n r^{\\frac{1}{2}(n)(n-1)}) &amp;= 3^{\\frac{n}{2}} \\;\\;\\;\\;\\;\\;\\;\\;\\; (3) \\end{align*} $$ Since $(3) = (1)$, we can conclude $3^\\frac{n}{2} = 59049 = 3^{10}$ $$ \\therefore n = 2 \\cdot 10 = 20. $$ QED . Euclid 2010 5b . A geometric sequence has 20 terms. The sum of its first two terms is 40. The sum of its first three terms is 76. The sum of its first four terms is 130. Determine how many of the terms in the sequence are integers. Solution You can find out what the third and fourth terms are, by taking the difference between the first two and first three terms; and the first three and first four terms respectively. $\\therefore$ the third term is $76-40=36$ and the fourth term is $130-76=54$. We can then find the common ratio, by dividing these numbers. $$\\therefore r=\\frac{54}{36}=\\frac{3}{2}$$ . Next, we want to find the first term of the sequence, so that we can derive the general term. To do this, we simply divide by $\\frac{3}{2}$ from the third term twice. $$ \\begin{align*} t_1 &amp;= 36 \\cdot \\frac{2}{3} \\cdot \\frac{2}{3}\\\\ \\therefore t_1 &amp;= 16. \\end{align*} $$ $$ \\therefore t_n = 2^4 (\\frac{3}{2})^{(n-1)}. $$ . Recall that the question asked for the number of integers in the sequence. By observing the general term, we can see that values of $n&gt;5$ will yield a fractional term. Therefore, there will be 5 integers in this sequence. Harder Problems . Harder problems often incorporate other math topics, like logarithms, systems of equations, etc. Euclid 2009 9a . If $\\log_2 x, (1 + \\log_4 x)$, and $\\log_8 4x$ are consecutive terms of a geometric sequence, determine the possible values of $x$. Solution It's best practice to simplify the logarithms to the same base. Let's set all the bases to 2. For the second term: $$1+\\log_4x = 1 + \\frac{\\log_2 x}{\\log_2 4} = 1 + \\frac{\\log_2 x}{2} = 1+\\frac{1}{2}\\log_2x$$ For the third term: $$\\log_8 4x=\\frac{\\log_2 4x}{\\log_2 8} = \\frac{\\log_2 4 + \\log_2 x}{3} = \\frac{2}{3} + \\frac{\\log_2 x}{3}$$ . To keep things cleaner in our solution, let's substitute $\\log_2 x = y$. Since the three terms are consecutive terms in a geometric sequence, we can then use our geometric mean. $$ \\begin{align*} \\frac{\\frac{2}{3} + \\frac{y}{3}}{1 + \\frac{y}{2}} &amp;= \\frac{1 + \\frac{y}{2}}{y}\\\\ y\\left(\\frac{2}{3} + \\frac{y}{3}\\right) &amp;= \\left(1+\\frac{y}{2}\\right)^2\\\\ \\frac{2}{3}y + \\frac{y^2}{3} &amp;= 1 + y + \\frac{1}{4}y^2\\\\ 8y + 4y^2 &amp;= 12 + 12y + 3y^2\\\\ y^2 - 4y - 12 &amp;=0\\\\ (y-6)(y+2)&amp;=0 \\end{align*} $$ . From this quadratic, we see that $y= \\log_2 x = 6$ or $-2$. $\\therefore x = 2^6 = 64$ or $x= 2^{-2}= \\frac{1}{4}$ . QED 2004 AMC 10A P18 . 2010 AMC 10B P16 . AMC problems and solutions coming soon. ",
     "url": "/content/math/algebra/sequences-and-series/geometric-sequences/#worked-contest-problems",
     "relUrl": "/content/math/algebra/sequences-and-series/geometric-sequences/#worked-contest-problems"
-  },"7": {
+  },"11": {
     "doc": "Geometric Sequences",
     "title": "Geometric Sequences",
     "content": ". | 1. The General Term . | Example 1 | Example 2 | . | 2. Geometric Mean . | Example 1 | . | 3. Recursive Formula | Worked Contest Problems . | Simpler Problems . | Euclid 2014 6b | Euclid 2010 5b | . | Harder Problems . | Euclid 2009 9a | 2004 AMC 10A P18 | 2010 AMC 10B P16 | . | . | . A geometric sequence is a sequence with a common ratio between consecutive terms. In this lesson we explain three of the most important subtopics of geometric sequences. ",
     "url": "/content/math/algebra/sequences-and-series/geometric-sequences/",
     "relUrl": "/content/math/algebra/sequences-and-series/geometric-sequences/"
-  },"8": {
+  },"12": {
     "doc": "Gravity and Circular Motion",
     "title": "Circular Motion",
     "content": "Just like linear motion, circular motion has very similar quantities that describe similar things. For position, velocity, and acceleration $x,\\ v,\\ a$, we have angle, angular velocity, and angular acceleration $\\theta,\\ \\omega,\\ \\alpha$. There is also the rotational counterpart to mass, the moment of inertia, denoted with $I$. All kinematics equations for linear and angular motion are the same, although some angular formulas have different forms due to rewriting the expression for moment of inertia. Circular motion can be analyzed with both a linear and angular view. Considering a uniform circular motion of radius $r$ and period $T$, we can derive expressions for velocity and frequency: . \\[\\begin{equation} v = \\frac{x}{T} = \\frac{2 \\pi r}{T} \\end{equation}\\] \\[\\begin{equation} f = \\frac{1}{T} \\end{equation}\\] Noting that $x = \\theta r$, we can derive expressions for angular velocity and angular frequency: . \\[\\begin{equation} \\omega = \\frac{2 \\pi}{T} \\end{equation}\\] Observe that converting both equations (1) and (2) produce the same equation (3). This shows how angular velocity and angular frequency are closely related, in particular, angular frequency is the scalar of angular velocity. ",
     "url": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#circular-motion",
     "relUrl": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#circular-motion"
-  },"9": {
+  },"13": {
     "doc": "Gravity and Circular Motion",
     "title": "Kepler’s Laws of Planetary Motion",
     "content": "Gravitational motion was first described as non-circular with Kepler’s Laws of Planetary Motion. Kepler’s Laws state: . We will prove Kepler’s 2nd law using conservation of angular momentum. In a small interval of time $dt$ the area swept out by the line is a triangle with area: . \\[\\begin{equation} A = \\frac{1}{2} r \\cdot v \\cdot dt \\end{equation}\\] Conservation of angular momentum states that: . \\[\\begin{equation} mr \\varDelta v = 0 \\end{equation}\\] Substituting (5) into (4), we get: . \\[\\begin{equation} \\varDelta A = \\frac{1}{2} r \\cdot \\varDelta v \\cdot dt \\end{equation}\\] \\[\\begin{equation} \\varDelta A = 0 \\end{equation}\\] ",
     "url": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#keplers-laws-of-planetary-motion",
     "relUrl": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#keplers-laws-of-planetary-motion"
-  },"10": {
+  },"14": {
     "doc": "Gravity and Circular Motion",
     "title": "Gravitational Motion",
     "content": "Consider a uniform circular gravitational orbit around the origin with radius $r$ and frequency $f$, where $p(0) = (0, r)$. We split the motion into 2 parametric equations of $x$ and $y$: . \\[\\begin{equation} x = rcos(2\\pi f \\cdot t) \\end{equation}\\] \\[\\begin{equation} y = rsin(2\\pi f \\cdot t) \\end{equation}\\] Recalling that $\\omega = 2\\pi f$, we can rewrite this as: . \\[\\begin{equation} x = rcos(\\omega t) \\end{equation}\\] \\[\\begin{equation} y = rsin(\\omega t) \\end{equation}\\] To find the velocity and acceleration, we take the derivative: . \\[\\begin{equation} v_x = -r\\omega sin(\\omega t) \\end{equation}\\] \\[\\begin{equation} v_y = r\\omega cos(\\omega t) \\end{equation}\\] \\[\\begin{equation} a_x = -r\\omega^2 cos(\\omega t) \\end{equation}\\] \\[\\begin{equation} a_y = -r\\omega^2 sin(\\omega t) \\end{equation}\\] Using equations (14) and (15), we can derive an equation for centripetal acceleration: . \\[\\begin{equation} a_c = \\sqrt{a_x^2 + a_y^2} = \\omega^2r \\end{equation}\\] The majority of orbital problems can be solved by equating centripetal force to gravitational force. \\[\\begin{equation} \\frac{GMm}{r^2} = m\\omega^2 r \\end{equation}\\] \\[\\begin{equation} GM = \\omega^2 r^3 \\end{equation}\\] \\[\\begin{equation} GM = (2\\pi f)^2 r^3 \\end{equation}\\] \\[\\begin{equation} T^2 = \\frac{4\\pi^2}{GM} r^3 \\end{equation}\\] Notice the relation to Kepler’s 3rd Law. ",
     "url": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#gravitational-motion",
     "relUrl": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/#gravitational-motion"
-  },"11": {
+  },"15": {
     "doc": "Gravity and Circular Motion",
     "title": "Gravity and Circular Motion",
     "content": " ",
     "url": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/",
     "relUrl": "/content/physics/classical-mechanics/central-force-motion-gravity/gravity-and-circular-motion/"
-  },"12": {
+  },"16": {
     "doc": "Home",
     "title": "Incendium Academy",
     "content": "An education platform that aims to level the playing field for high school students who cannot afford STEM contest preparation. ",
     "url": "/",
     "relUrl": "/"
-  },"13": {
+  },"17": {
     "doc": "Home",
     "title": "A Message from the Founders",
     "content": "For the past few months, we formed a team of like-minded peers and have been developing an education platform to provide free resources for those competing in high school contests. We were inspired to take action in our community when we noticed the large disparities between the performances of those who were able to afford preparation classes and those who could not. The purpose of our platform is to bridge this gap. Our website is open to anyone seeking to learn, and anyone seeking to teach can contribute. It specifically focuses on problem solving techniques used in advanced math, physics, and chemistry contests, making it unique from other similar platforms. This project is funded by the #RisingYouth grant, a program led by TakingITGlobal, which helps youth in Canada give back to their community. Stay tuned for development updates, and more by following our socials. Jae Park, Om Patel, Abhi Nair. ",
     "url": "/",
     "relUrl": "/"
-  },"14": {
+  },"18": {
     "doc": "Home",
     "title": "Flexible Learning",
     "content": "Learn at your own pace, at any difficulty. With in depth material, each lesson ensures you are well prepared for more advanced topics. ",
     "url": "/",
     "relUrl": "/"
-  },"15": {
+  },"19": {
     "doc": "Home",
     "title": "User Customization",
     "content": "Easily keep track of your learning. By creating an account to you can bookmark lessons that you've completed, that are in progress, and you want to do. ",
     "url": "/",
     "relUrl": "/"
-  },"16": {
+  },"20": {
     "doc": "Home",
     "title": "Authentic Resources",
     "content": "Our content team is lead by internationally recognized curriculum advisors. From a two time IOAA qualifier to an IOI 2020 Silver Medalist, our lessons are made and reviewed by people who’ve found renowned success in high school. We can help you find it too. Login Sign Up ",
     "url": "/",
     "relUrl": "/"
-  },"17": {
+  },"21": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
     "url": "/",
     "relUrl": "/"
-  },"18": {
+  },"22": {
     "doc": "Central Force Motion and Gravity",
     "title": "Central Force Motion and Gravity",
     "content": " ",
     "url": "/content/physics/classical-mechanics/central-force-motion-gravity/",
     "relUrl": "/content/physics/classical-mechanics/central-force-motion-gravity/"
-  },"19": {
+  },"23": {
     "doc": "Classical Mechanics",
     "title": "Classical Mechanics",
     "content": " ",
     "url": "/content/physics/classical-mechanics/",
     "relUrl": "/content/physics/classical-mechanics/"
-  },"20": {
+  },"24": {
     "doc": "Physics",
     "title": "Physics",
     "content": "Welcome to our physics guide. ",
     "url": "/content/physics/",
     "relUrl": "/content/physics/"
-  },"21": {
+  },"25": {
     "doc": "Circle Geometry",
     "title": "Circle Geometry",
     "content": " ",
     "url": "/content/math/geometry/circle-geometry/",
     "relUrl": "/content/math/geometry/circle-geometry/"
-  },"22": {
+  },"26": {
     "doc": "Geometry",
     "title": "Geometry",
     "content": " ",
     "url": "/content/math/geometry/",
     "relUrl": "/content/math/geometry/"
-  },"23": {
+  },"27": {
+    "doc": "Basic Principles and Techniques",
+    "title": "Basic Principles and Techniques",
+    "content": " ",
+    "url": "/content/math/combinatorics/basic-counting/",
+    "relUrl": "/content/math/combinatorics/basic-counting/"
+  },"28": {
+    "doc": "Combinatorics",
+    "title": "Combinatorics",
+    "content": " ",
+    "url": "/content/math/combinatorics/",
+    "relUrl": "/content/math/combinatorics/"
+  },"29": {
     "doc": "Functional Equations",
     "title": "Functional Equations",
     "content": " ",
     "url": "/content/math/algebra/functional-equations/",
     "relUrl": "/content/math/algebra/functional-equations/"
-  },"24": {
+  },"30": {
     "doc": "Systems of Equations",
     "title": "Systems of Equations",
     "content": " ",
     "url": "/content/math/algebra/system-of-equations/",
     "relUrl": "/content/math/algebra/system-of-equations/"
-  },"25": {
+  },"31": {
     "doc": "Sequences and Series",
     "title": "Sequences and Series",
     "content": " ",
     "url": "/content/math/algebra/sequences-and-series/",
     "relUrl": "/content/math/algebra/sequences-and-series/"
-  },"26": {
+  },"32": {
     "doc": "Algebra",
     "title": "Algebra",
     "content": " ",
     "url": "/content/math/algebra/",
     "relUrl": "/content/math/algebra/"
-  },"27": {
+  },"33": {
     "doc": "Math",
     "title": "Math",
     "content": "Welcome to our math guide. ",
     "url": "/content/math/",
     "relUrl": "/content/math/"
-  },"28": {
+  },"34": {
     "doc": "Organic Chemistry",
     "title": "Organic Chemistry",
     "content": "This unit is critical to understanding carbon-based compounds and their interactions. ",
     "url": "/content/chemistry/organic-chemistry/",
     "relUrl": "/content/chemistry/organic-chemistry/"
-  },"29": {
+  },"35": {
     "doc": "Rates and Kinetics",
     "title": "Rates and Kinetics",
     "content": "This unit is critical to understanding the mechanisms behind chemical reactions. Rates and Kinetics are the study of the rates of reactions, and the different factors that affect it. If thermodynamics is about the direction of a chemical process, rates and kinetics can be seen as the time it takes to complete. ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/"
-  },"30": {
+  },"36": {
     "doc": "Physical Chemistry",
     "title": "Physical Chemistry",
     "content": "The Physical Chemistry section explore the applications of the theories seen in physics within chemical systems. Because of the strong crossover between physics, some content here may be similar to material in the physics catalogue. ",
     "url": "/content/chemistry/physical-chemistry/",
     "relUrl": "/content/chemistry/physical-chemistry/"
-  },"31": {
+  },"37": {
     "doc": "Chemistry",
     "title": "Chemistry",
     "content": "Welcome to our chemistry guide. ",
     "url": "/content/chemistry/",
     "relUrl": "/content/chemistry/"
-  },"32": {
+  },"38": {
     "doc": "Injectivity/Surjectivity/Bijectivity and Involutions",
     "title": "Injectivity/Surjectivity/Bijectivity and Involutions",
     "content": "This lesson goes through the differences between injective, surjective, and bijective functions, as well as involutions. An involution, or an involutory function, is a function that is its own inverse. ",
     "url": "/content/math/algebra/functional-equations/injectivity-surjectivity-bijectivity-involutions/",
     "relUrl": "/content/math/algebra/functional-equations/injectivity-surjectivity-bijectivity-involutions/"
-  },"33": {
+  },"39": {
     "doc": "Inscribed and Central Angles",
     "title": "Inscribed and Central Angles",
     "content": "Inscribed and Central Angle formulae are integral components to circle geometry problems. This lesson goes over all the necessary theorems that will be required on math contests. ",
     "url": "/content/math/geometry/circle-geometry/inscribed-central-angles/",
     "relUrl": "/content/math/geometry/circle-geometry/inscribed-central-angles/"
-  },"34": {
+  },"40": {
     "doc": "Non-Linear System of Equations",
     "title": "Non-Linear System of Equations",
     "content": "This lesson goes through various techniques that are useful for solving systems of nonlinear equations involving radicals, trig functions, and reciprocals. ",
     "url": "/content/math/algebra/system-of-equations/non-linear-systems/",
     "relUrl": "/content/math/algebra/system-of-equations/non-linear-systems/"
-  },"35": {
+  },"41": {
     "doc": "Rate Laws",
     "title": "Introduction",
     "content": "The rate law is a simple relation that describes the proportionality relation between the concentration of the reactants and the rate of reaction. For example, for a hypothetical reaction: . \\[\\ce{A(aq) + B(aq)-&gt; C(aq)}\\] The rate law could be described as: . \\[Rate = k[\\ce{A}]^m[\\ce{B}]^n\\] where \\(k\\), \\(m\\), and \\(n\\) are constants. Note that reactants that are in a solid or liquid state of matter are not counted, as they do not have a concentration. This means that the rate law of a reaction like: . \\[\\ce{A(s) + B(aq) -&gt; C(aq)}\\] would be . \\[Rate = k[\\ce{B}]^n\\] We can derive this rate law from a series of simpler relations. First, we know that the rate of reaction goes up as the concentration of a reactant increases due to the increased chance of successful collisions. We can describe this as a general proportionality relation: . \\[Rate \\propto [Reactant]^m\\] We describe this relationship by saying that the reaction is $m$th order with respect to the reactant. For example, for our hypothetical reaction, we know that for some constants \\(m\\) and \\(n\\): . \\[Rate \\propto [\\ce{A}]^m \\\\ Rate \\propto [\\ce{B}]^n\\] We can combine these into one proportionality relation: . \\[Rate \\propto [\\ce{A}]^m[\\ce{B}]^n\\] which is equivalent to our rate law. ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#introduction",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#introduction"
-  },"36": {
+  },"42": {
     "doc": "Rate Laws",
     "title": "Determining Rate Laws Experimentally",
     "content": "Given \\(n+1\\) data points, where \\(n\\) is the number of reactants, we can determine the rate law by solving a system of equations. In contest and in real life, these data points will be generally be selected so that this system of equations is easy to solve. For example, say we were given the following data points for our hypothetical reaction: . | Trial | Initial Concentration of A (M) | Initial Concentration of B (M) | Rate of Reaction (M/s) | . | 1 | 0.1 | 0.1 | 0.2 | . | 2 | 0.1 | 0.3 | 0.6 | . | 3 | 0.2 | 0.3 | 2.4 | . From these data points, we can write 3 equations: . \\[\\begin{align} Rate &amp;= k[\\ce{A}]^m[\\ce{B}]^m \\\\ 0.2 &amp;= k(0.1\\ M)^m(0.1\\ M)^n &amp;(1)\\\\ 0.6 &amp;= k(0.1\\ M)^m(0.3\\ M)^n &amp;(2)\\\\ 2.4 &amp;= k(0.2\\ M)^m(0.3\\ M)^n &amp;(3) \\end{align}\\] Dividing equation \\((2)\\) by equation \\((1)\\) cancels out the variable \\(m\\) and the variable \\(k\\). This allows us to easily solve for \\(n\\). \\[3 = \\frac{(0.3\\ M)^n}{(0.1\\ M)^n} \\\\ 3 = 3^n \\\\ n = \\log_3 (3) = 1\\] From this, we see that the reaction is first order with respect to \\(\\ce{B}\\). We can then divide equation \\((3)\\) by equation $(2)$, leaving only variable m: . \\[4 = \\frac{(0.2\\ M)^m}{(0.1\\ M)^m} \\\\ 4 = 2^m \\\\ m = \\log_2 (4)= 2\\] From this, we see that the reaction is second order with respect to \\(\\ce{A}\\). We can now plug in a data point into the rate law to solve for \\(k\\): . \\[0.2\\ M/s = k(0.1\\ M)^2(0.1\\ M)^1 \\\\ k = 200\\ s^{-1}M^{-2}\\] We now have our rate law: . \\[Rate = (200 s^{-1}M^{-2})[\\ce{A}]^2[\\ce{B}]\\] ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#determining-rate-laws-experimentally",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#determining-rate-laws-experimentally"
-  },"37": {
+  },"43": {
     "doc": "Rate Laws",
     "title": "Determining Rate Laws Theoretically",
     "content": "Elementary Reactions . If a reaction occurs in a single collision, we call it an elementary reaction. In organic chemistry, we may also describe these reactions as concerted. We can describe the rate law easily for these reactions. For a general elementary reaction, described as: . \\[\\ce{aA + bB ... -&gt; cC + dD ...}\\] the rate law can be described as: . \\[Rate = k[\\ce{A}]^a[\\ce{B}]^b...\\] We can prove this intuitively or with math. Intuitively . The number of collisions is directly proportional to the rate. To find out the rate law, let us first think about a reaction which is caused by the collision by a molecule of A and a molecule of B. \\[\\ce{A + B -&gt; C}\\] Intuitively, the number of collisions should be directly proportional to the number of molecules of A and B in a given space. This means the rate law will be \\(Rate = k[A][B]\\). Now let us think of a reaction which is caused by the collision of two molecules of A. \\[\\ce{2A -&gt; C}\\] We can imagine splitting the A molecules into two distinct groups which collide with each other: . \\[\\ce{A_1 + A_2 -&gt; C}\\] This is essentially the first case: two distinct molecules are colliding with each other, so the rate will be proportional to both their concentrations. This leads us to the rate law: . \\[Rate = k[\\ce{A_1}][\\ce{A_2}]\\] However, since the A molecules aren’t actually distinct, the rate law simplifies to: . \\[Rate = k[\\ce{A}]^2\\] In the general case, we get the desired formula of \\(Rate = k[\\ce{A}]^a[\\ce{B}]^b...\\) . Math . Some prerequisite math knowledge is needed to understand this: [Link to combinatorics lesson here] . First, we set an arbitrary volume for our reaction vessel. In our case, we will use \\(1\\ \\text{L}\\). This is just to make calculations easier. We will calculate the number of total possible collisions, as it will be proportional to the number of collisions per second and therefore the rate. We can think about this as a combinatorics problem; a collision is just choosing molecules from each reactant. For our first basic case, let’s use this reaction: . \\[\\ce{A + B -&gt; C}\\] Let’s first imagine the reaction vessel had one A molecule and one B molecule. We can select one A molecule in \\(\\binom{1}{1} = 1\\) way and one B in molecule in \\(\\binom{1}{1} = 1\\) way. Therefore, the total number of possible collisions is \\(1 * 1 = 1\\). Now, let’s generalize to a case with \\(x\\) A molecules and \\(y\\) B molecules. We can select one A molecule in \\(\\binom{x}{1} = x\\) ways and one B molecule in \\(\\binom{y}{1} = y\\) ways. Therefore, the total number of possible collisions is \\(x*y\\). Since concentration is amount of substance in a certain amount of volume, and rate is proportional to the total number of possible collisions, we end up with \\(Rate = k[\\ce{A}][\\ce{B}]\\). For our next case, let’s use this reaction: . \\[\\ce{2A + 3B -&gt; C}\\] Let’s imagine the reaction vessel had \\(x\\) molecules of A and \\(y\\) molecules of B. We select two molecules of A in \\(\\binom{x}{2}\\) ways and 3 molecules of B in \\(\\binom{y}{3}\\) ways. As \\(x\\) increases, \\(\\binom{x}{2}\\) becomes more and more proportional to \\(x^2\\). This is because \\(\\binom{x}{2} = \\frac{(x)(x-1)}{2} \\approx \\frac{x^2}{2}\\) . Similarly, as \\(y\\) increases, \\(\\binom{y}{3}\\) becomes more and more proportional to \\(y^3\\). Since the number of molecules in a real reaction will likely be very large, we know that the total number of possible collisions is proportional to \\(x^2 * y^3\\). Therefore, we end up with the rate law: \\(Rate = k[\\ce{A}]^2[\\ce{B}]^3\\). In general, \\(\\binom{x}{n}\\) will become more proportional to \\(x^n\\), leading to the general rate law. Non-elementary Reactions . In the real world, many complex reactions do not occur in just one collision. They often through a series of elementary reactions known as a mechanism. In this case, the rate law can not be described with the general formula. Rate-determining Step . In every mechanism, there will be a step that is the slowest. If this step is significantly slower than the other steps, then we call it the rate-determining step. This means that the rate of the reaction is described by the rate law of this step. We can think about this intuitively. If we think about the reaction as a relay race, where the product of each step is passed as the reactant of the next, it becomes obvious. If Usain Bolt is in a relay race team with a tortoise, it doesn’t matter how fast Usain Bolt runs his section. The majority of each relay lap will be spent during the tortoise’s section, and so the tortoise’s speed will essentially be the speed of the team. Therefore, if we are given the mechanism of a reaction and its slowest step, we can generally find a rate law for the whole reaction. For example, let’s use this hypothetical reaction: . \\[\\ce{A2 + 2B2 -&gt; A2B4}\\] Say that a mechanism has been determined by a chemist: . \\[\\begin{align} \\ce{A2 &amp;-&gt; 2A} &amp;(slow)\\\\ \\ce{A + B2 &amp;-&gt; AB2} \\\\ \\ce{AB2 + B2 + A&amp;-&gt; A2B4} \\end{align}\\] Given that the first step is significantly slower than the rest, we know that the rate law of the entire reaction can be determined by the rate law of the first step. Using our knowledge on the rate law of elementary reactions, we determine that the rate law of the first step and therefore the entire reaction is: . \\[Rate = k_1[\\ce{A2}]\\] However, it is not always this easy to determine the rate law. If the slowest step were instead the second step for example: . \\[\\begin{align} \\ce{A2 &amp;-&gt; 2A}\\\\ \\ce{A + B2 &amp;-&gt; AB2} &amp;(slow)\\\\ \\ce{AB2 + B2 + A&amp;-&gt; A2B4} \\end{align}\\] we would run into an issue. The rate law of the second step is: . \\[Rate = k_2[\\ce{A}][\\ce{B2}]\\] But this rate law can not be simply used as the rate law for the entire reaction. This is because it contains the concentration of what is known as an intermediate, or something that only appears in the middle of a reaction, as it is produced in a step, and then used in a later step. From its definition, the rate law must describe the rate in terms of the concentrations of the reactants, so this can not be simply used. Pre-equilibrium Approximation . Let’s say the chemist revises his mechanism so that the first step is now reversible: . \\[\\begin{align} \\ce{A2 &amp;&lt;-&gt; 2A}\\\\ \\ce{A + B2 &amp;-&gt; AB2} &amp;(slow)\\\\ \\ce{AB2 + B2 + A&amp;-&gt; A2B4} \\end{align}\\] Recall that all this means is that both the forward and backward reaction can occur. We could also write this as: . \\[\\begin{align} \\ce{A2 &amp;-&gt; 2A}\\\\ \\ce{2A &amp;-&gt; A2} \\\\ \\ce{A + B2 &amp;-&gt; AB2} &amp;(slow)\\\\ \\ce{AB2 + B2 + A &amp;-&gt; A2B2} \\end{align}\\] On their own, reversible reactions tend to reach equilibrium. As a refresher, equilibrium is the state at which the rate of the forward reaction equals the rate of the reverse reaction. Using the rate laws of the forward and backward reaction, we can express what equilibrium of our reversible step would look like: . \\[\\begin{align} Rate_{forward} = k_1[\\ce{A2}] \\\\ Rate_{backward} = k_{-1}[\\ce{A}]^2 \\\\ k_1[\\ce{A2}] = k_{-1}[\\ce{A}]^2 \\\\ [A] = \\sqrt{\\frac{k_1[\\ce{A2}]}{k_{-1}}} \\\\ \\end{align}\\] Therefore, if the first step was at equilibrium, we would be able to write the concentration of the intermediate in terms of the concentration of the reactants, solving our earlier issue. Luckily for us, we can actually assume the first step is at equilibrium due to the pre-equilibrium approximation. This approximation says that if a slow step uses a product or reactant in a fast reversible reaction, we can assume that the reversible reaction is still in equilibrium. We can think about this using an intuitive example. Imagine there are two tanks of water divided by a plate that has many holes: . This simulates our fast equilibrium reaction. The water goes from the left side to the right side at a rate equal to the rate water goes from the right side to the left side, meaning it is at equilibrium. Now let’s poke a small hole in the right side. This will simulate the slow step following the reversible reaction. We see that the water levels of the two sides remain equal, as the rate at which the water leaves the right side is slow enough that equilibrium can still roughly be reached. Back to our example, we can therefore plug in our expression for \\([A]\\) into the rate law of the second step: . \\[\\begin{align} Rate &amp;= k_2[\\ce{A}][\\ce{B2}] \\\\ [A] &amp;= \\sqrt{\\frac{k_1[\\ce{A2}]}{k_{-1}}} \\\\ Rate &amp;= k_2\\sqrt{\\frac{k_1[\\ce{A2}]}{k_{-1}}}[\\ce{B2}] \\\\ &amp;= k_2\\sqrt{\\frac{k_1}{k_{-1}}} [\\ce{A_2}]^{1/2}[\\ce{B2}] \\\\ &amp;= k[\\ce{A2}]^{1/2}[\\ce{B2}] \\end{align}\\] We now have the rate law of our reaction. Steady-state Approximation . Let’s say the chemist revises his mechanism again so that the third step is now the slowest: . \\[\\begin{align} \\ce{A2 &amp;&lt;-&gt; 2A}\\\\ \\ce{A + B2 &amp;-&gt; AB2}\\\\ \\ce{AB2 + B2 + A&amp;-&gt; A2B4} &amp;(slow) \\end{align}\\] Let’s write out the rate law of the rate-determining third step: . \\[Rate = k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}]\\] We once again run into the problem that there are intermediates in the rate expression. In this case, we can no longer use the pre-equilibrium approximation. Instead, we use the steady state approximation. This approximation assumes that the intermediates in a reaction shouldn’t build up, since intermediates are generally unstable and be in the final product. Because of this, the rate that they are produced should equal the rate that they are consumed. Let’s first do this for the intermediate \\(\\ce{AB2}\\). The second step is the only step where \\(\\ce{AB2}\\) is produced, or in other words, in the products. Therefore, the rate of production of \\(\\ce{AB2}\\) is equal to the rate of reaction of the second step: . \\[Rate_{produced} = k_2[\\ce{A}][\\ce{B2}]\\] The third step is the only step where \\(\\ce{AB2}\\) is consumed, or in other words, in the reactants. Therefore, the rate of consumption of \\(\\ce{AB2}\\) is equal to the rate of reaction of the third step: . \\[Rate_{consumed} = k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}]\\] Since the rate at which it is consumed should equal the rate at which it is produced, we get the following relation: . \\[\\begin{align*} Rate_{produced} &amp;= Rate_{consumed} \\\\ k_2[\\ce{A}][\\ce{B2}] &amp;= k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}] \\end{align*}\\] This relation can be simplified to get an expression for \\([\\ce{AB2}]\\). \\[[\\ce{AB2}] = \\frac{k_2}{k_3}\\] Now let’s look at the intermediate \\(\\ce{A}\\). \\(\\ce{A}\\) is only produced in the forward reaction of the first step. \\[Rate_{produced} = k_1[\\ce{A2}]\\] \\(\\ce{A}\\) is consumed in the reverse reaction of the first step, in the second step and in the third step. \\[Rate_{consumed} = k_{-1}[\\ce{A}]^2 + k_2[\\ce{A}][\\ce{B2}] + k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}]\\] Once again, since the rate at which it is consumed should equal the rate at which it is produced, we get the following relation: . \\[\\begin{align*} Rate_{produced} &amp;= Rate_{consumed} \\\\ k_1[\\ce{A2}] &amp;= k_{-1} [\\ce{A}]^2 + k_2[\\ce{A}][\\ce{B2}] + k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}] \\end{align*}\\] Let’s substitute our \\([\\ce{AB2}]\\) term that we found earlier and simplify: . \\[\\begin{align*} k_1[\\ce{A2}] &amp;= k_{-1} [\\ce{A}]^2 + k_{ 2 }[\\ce{A}][\\ce{B2}] + k_3\\frac{k_2}{k_3}[\\ce{B2}][\\ce{A}] \\\\ k_1[\\ce{A2}] &amp;= k_{-1}[\\ce{A}]^2 + 2k_{ 2 }[\\ce{A}][\\ce{B2}] \\\\ \\end{align*}\\] \\[\\therefore k_{-1}[\\ce{A}]^2 + 2k_{ 2 }[\\ce{A}][\\ce{B2}] - k_1[\\ce{A2}] = 0\\] We can now solve for \\([\\ce{A}]\\) using the quadratic formula. A lesson on how to solve quadratics is linked here: [Insert link to math lesson on quadratics here] . \\[[\\ce{A}] = \\frac{-2k_2 + \\sqrt{(2k_2)^2 + 4k_{-1}k_1[\\ce{A2}]}}{2k_{-1}} = \\frac{-k_2 + \\sqrt{{k_2}^2 + k_{-1}k_1[\\ce{A2}]}}{k_{-1}}\\] We will now plug these terms into the rate law of the rate-determining third step: . \\[\\begin{align*} Rate &amp;= k_3[\\ce{AB2}][\\ce{B2}][\\ce{A}] \\\\ Rate &amp;= k_3\\frac{k_2}{k_3}[\\ce{B2}]\\frac{-k_2 + \\sqrt{{k_2}^2 + k_{-1}k_1[\\ce{A2}]}}{k_{-1}} \\\\ Rate &amp;= k_2[\\ce{B2}]\\frac{-k_2 + \\sqrt{{k_2}^2 + k_{-1}k_1[\\ce{A2}]}}{k_{-1}} \\end{align*}\\] Now we have the rate law of our reaction! . ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#determining-rate-laws-theoretically",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/#determining-rate-laws-theoretically"
-  },"38": {
+  },"44": {
     "doc": "Rate Laws",
     "title": "Rate Laws",
     "content": ". | Introduction | Determining Rate Laws Experimentally | Determining Rate Laws Theoretically . | Elementary Reactions . | Intuitively | Math | . | Non-elementary Reactions . | Rate-determining Step | Pre-equilibrium Approximation | Steady-state Approximation | . | . | . ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/rate-laws/"
-  },"39": {
+  },"45": {
     "doc": "Thales Theorem",
     "title": "Thales Theorem",
     "content": "This is a brief extension of the Inscribed Angle Theorem, which is useful in questions involving right triangles inscribed within a circle. Thales Theorem is generally an accepted property of a circle. Trivial properties like Thales are not usually derived in contests - you can get away using it without doing so. ",
