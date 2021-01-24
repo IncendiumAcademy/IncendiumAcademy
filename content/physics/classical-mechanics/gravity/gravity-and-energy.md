@@ -19,7 +19,7 @@ $$
     \varDelta U = mg \varDelta h
 \end{equation}
 $$
-git lfs track "*.png"
+
 Note that this formula only works when the acceleration due to gravity (and the force of gravity) is assumed to be constant.
 This is not true on large scales, such as the moon. To solve for work, we must use an integral, essentially adding values of
 $\varDelta U$ for small increments of $\varDelta r$, where $r$ is the distance between the centers of the objects. We now have:
