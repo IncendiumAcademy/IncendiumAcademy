@@ -8,4 +8,4 @@ video_id: xWJBT716NTA
 nav_order: 1
 ---
 
-Brief overview of analytic geometry, assumin    g some prior knowledge. Goes over a few important formulas/results, as well as practice problems.
+A brief overview of analytic geometry, assuming some prior knowledge. This video goes over a few important formulas/results, as well as practice problems.
