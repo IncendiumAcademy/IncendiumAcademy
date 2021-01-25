@@ -80,9 +80,6 @@
   {%- for node in pages_list -%}
     {%- if node.parent == nil -%}
       <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
-        <div class="nav-list-progress-indicator">
-          <span class="progress"></span>
-        </div>
         {%- if page.parent == node.title or page.grand_parent == node.title -%}
           {%- assign first_level_url = node.url | absolute_url -%}
         {%- endif -%}
@@ -100,7 +97,9 @@
             {%- for child in children_list -%}
               <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
                 <div class="nav-list-progress-indicator">
-                  <span class="progress"></span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="progress-ring" viewBox="0 0 519 519">
+                    <circle class="progress-ring__circle" stroke="#4d4d4d" stroke-width="91" fill="transparent" cx="259.5" cy="259.5" r="214"/>
+                  </svg>
                 </div>
                 {%- if page.url == child.url or page.parent == child.title -%}
                   {%- assign second_level_url = child.url | absolute_url -%}

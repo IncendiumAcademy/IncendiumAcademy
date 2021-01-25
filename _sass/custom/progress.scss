@@ -1,3 +1,5 @@
+$pi: 3.14159265358979;
+
 .nav-list-item > a {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -6,19 +8,26 @@
 }
 
 .nav-list .nav-list-item .nav-list-progress-indicator {
-  display: none;
   width: $nav-list-item-height-sm;
   height: $nav-list-item-height-sm;
-  padding: #{$nav-list-item-height-sm / 2.5};
+  padding: #{$nav-list-item-height-sm / 3};
   position: absolute;
-  left: -#{$nav-list-item-height-sm / 2};
+  left: 0;
 
   @include mq(md) {
     display: block;
     width: $nav-list-item-height;
     height: $nav-list-item-height;
     padding: #{$nav-list-item-height / 3};
-    left: 0;
+    left: $nav-list-item-height/2;
+  }
+
+  & ~ .nav-list-link {
+    margin-left: $nav-list-item-height-sm/2;
+
+    @include mq(md) {
+      margin-left: $nav-list-item-height/2;
+    }
   }
 
   .progress {
@@ -26,102 +35,64 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: grey;
+    background-color: #4d4d4d;
+    background-image: url("/assets/images/incomplete.svg");
+    position: relative;
 
     &.in-progress {
-      background: blue;
+      background-color: #edb041;
+      background-image: url("/assets/images/inprogress.svg");
     }
-    &.complete { 
-      background: green;
+    &.complete {
+      background-color: #00aa39;
+      background-image: url("/assets/images/complete.svg");
     }
+  }
+
+  .progress-ring {
+    display: block;
+  }
+  .progress-ring__circle {
+    transition: stroke-dashoffset 0.2s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    $circumference: #{214 * 2 * $pi};
+    --percent: 0;
+    stroke-dasharray: $circumference $circumference;
+    stroke-dashoffset: calc(#{$circumference} - var(--percent) / 100 * #{$circumference});
   }
 }
 
-.nav-list .nav-list-item .nav-list-item .nav-list-item .nav-list-progress-indicator {
-  display: block;
-}
-.nav-list .nav-list-item .nav-list-item .nav-list-item:not(:first-child) .nav-list-progress-indicator .progress::before {
+/* Line before indicator */
+.nav-list .nav-list-item:not(:first-child) > .nav-list-progress-indicator .progress::before {
   content: "";
   margin: 0;
   padding: 0;
   width: 2px;
-  height: #{$nav-list-item-height-sm / 2};
+  height: calc(#{$nav-list-item-height-sm / 2} - 50%);
   position: absolute;
-  bottom: 50%;
+  bottom: 100%;
   left: calc(50% - 1px);
-  background: inherit;
+  background-color: inherit;
+
+  @include mq(md) {
+    height: calc(#{$nav-list-item-height / 2} - 50%);
+  }
 }
-.nav-list .nav-list-item .nav-list-item .nav-list-item:not(:last-child) .nav-list-progress-indicator .progress::after {
+
+/* Line after indicator */
+.nav-list .nav-list-item:not(:last-child) > .nav-list-progress-indicator .progress::after {
   content: "";
   margin: 0;
   padding: 0;
   width: 2px;
-  height: #{$nav-list-item-height-sm / 2};
+  height: calc(#{$nav-list-item-height-sm / 2} - 50%);
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: calc(50% - 1px);
-  background: inherit;
-}
+  background-color: inherit;
 
-@include mq(md) {
-
-  /* Line before indicator */
-  .nav-list .nav-list-item:not(:first-child) .nav-list-progress-indicator .progress::before,
-  .nav-list .nav-list-item.active .nav-list-progress-indicator .progress::before {
-    content: "";
-    margin: 0;
-    padding: 0;
-    width: 2px;
-    height: #{$nav-list-item-height / 2};
-    position: absolute;
-    bottom: 50%;
-    left: calc(50% - 1px);
-    background: inherit;
+  @include mq(md) {
+    height: calc(#{$nav-list-item-height / 2} - 50%);
   }
-
-  /* Line after indicator */
-  .nav-list .nav-list-item:not(:last-child) .nav-list-progress-indicator .progress::after,
-  .nav-list .nav-list-item.active > .nav-list-progress-indicator .progress::after {
-    content: "";
-    margin: 0;
-    padding: 0;
-    width: 2px;
-    height: #{$nav-list-item-height / 2};
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 1px);
-    background: inherit;
-  }
-
-  /* Remove line before first indicator */
-  .nav-list:first-child > .nav-list-item.active:first-child > .nav-list-progress-indicator .progress::before {
-    content: none;
-  }
-
-  /* Remove line after last indicator */
-  .nav-list:last-child .nav-list-item.active:last-child .nav-list:last-child .nav-list:last-child .nav-list-item.active:last-child > .nav-list-progress-indicator .progress::after {
-    content: none;
-  }
-
-  /* Rotate line before indicator */
-  .nav-list .nav-list-item.active > .nav-list .nav-list-item:first-child > .nav-list-progress-indicator .progress::before {
-    height: #{$nav-list-item-height / 1.5};
-    transform-origin: 50% 100%;
-    transform: rotate(-35deg);
-  }
-
-  /* Rotate line after indicator */
-  .nav-list .nav-list-item.active:not(:last-child) > .nav-list .nav-list-item:last-child:not(.active) > .nav-list-progress-indicator .progress::after,
-  .nav-list .nav-list-item.active:not(:last-child) > .nav-list .nav-list-item:last-child:first-child > .nav-list-progress-indicator .progress::after {
-    height: #{$nav-list-item-height / 1.5};
-    transform-origin: 50% 0;
-    transform: rotate(35deg);
-  }
-
-  /* Rotate line after indicator more */
-  .nav-list > .nav-list-item.active > .nav-list > .nav-list-item.active:last-child .nav-list-item:last-child > .nav-list-progress-indicator .progress::after {
-    height: #{$nav-list-item-height / 1.1};
-    transform: rotate(55deg);
-  }
-
 }
