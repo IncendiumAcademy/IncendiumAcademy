@@ -7,27 +7,27 @@ $pi: 3.14159265358979;
   overflow: hidden;
 }
 
+.site-nav > .nav-list > .nav-list-item > .nav-list > .nav-list-item {
+  margin-left: $nav-list-item-height-sm / 2;
+
+  @include mq(md) {
+    margin-left: $nav-list-item-height / 2;
+  }
+}
+
 .nav-list .nav-list-item .nav-list-progress-indicator {
   width: $nav-list-item-height-sm;
   height: $nav-list-item-height-sm;
   padding: #{$nav-list-item-height-sm / 3};
   position: absolute;
-  left: 0;
+  left: -$nav-list-item-height-sm / 2;
 
   @include mq(md) {
     display: block;
     width: $nav-list-item-height;
     height: $nav-list-item-height;
     padding: #{$nav-list-item-height / 3};
-    left: $nav-list-item-height/2;
-  }
-
-  & ~ .nav-list-link {
-    margin-left: $nav-list-item-height-sm/2;
-
-    @include mq(md) {
-      margin-left: $nav-list-item-height/2;
-    }
+    left: 0;
   }
 
   .progress {
@@ -57,7 +57,7 @@ $pi: 3.14159265358979;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     $circumference: #{214 * 2 * $pi};
-    --percent: 0;
+    --percent: 100;
     stroke-dasharray: $circumference $circumference;
     stroke-dashoffset: calc(#{$circumference} - var(--percent) / 100 * #{$circumference});
   }
