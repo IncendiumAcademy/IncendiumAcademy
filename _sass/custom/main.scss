@@ -77,6 +77,11 @@
   }
 }
 
+#sidebar-graphic {
+  border-radius: $border-radius;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.2);
+}
+
 .divider {
   margin: 0 20%;
   color: $sidebar-color;
