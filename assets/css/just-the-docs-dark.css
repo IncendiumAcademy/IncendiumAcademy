@@ -2313,6 +2313,8 @@ h1, .text-alpha { font-size: 42px !important; line-height: 1.25; font-weight: 30
   .left img { margin-left: 10%; }
   .right { text-align: right; }
   .right img { margin-right: 10%; } }
+#sidebar-graphic { border-radius: 4px; box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.2); }
+
 .divider { margin: 0 20%; color: #27262b; border: 1px solid rgba(39, 38, 43, 0.98); }
 
 .buttons { text-align: center; padding: 7% 14%; }
