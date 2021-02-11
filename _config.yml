@@ -19,6 +19,11 @@ logo: "/assets/images/logo.png"
 
 permalink: pretty
 
+collections:
+  about:
+    output: true
+    permalink: /:collection/:name/
+
 exclude:
   - "Gemfile"
   - "Gemfile.lock"
