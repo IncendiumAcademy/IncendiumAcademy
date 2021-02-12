@@ -39,6 +39,8 @@
   display: flex;
   align-items: center;
   padding: 4% 14%;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .left {
@@ -80,6 +82,7 @@
 #sidebar-graphic {
   border-radius: $border-radius;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
 
 .divider {

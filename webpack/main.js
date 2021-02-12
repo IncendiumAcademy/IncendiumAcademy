@@ -1,6 +1,7 @@
 import "./event-handlers";
 import "./home-particles";
 import "./tabs";
+import "./animation";
 import Modal from "./modal";
 import { auth } from "./auth";
 import { db } from "./database";
