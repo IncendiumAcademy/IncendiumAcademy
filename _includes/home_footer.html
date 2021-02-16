@@ -1,6 +1,10 @@
 <div class="footer-main">
     <div class="footer-content">
-        <img src="{{ site.logo }}">
+        <div class="column">
+            <img src="{{ site.logo }}">
+            <img src="{{ site.sponsor }}">
+        </div>
+
         <div class="column left">
             {% if site.drop_title %}
             {{ site.drop_title }}
@@ -16,7 +20,7 @@
             {% endif %}
         </div>
         <div class="column" style="align-self: flex-end;">
-            <a href="#" style="text-decoration: none">About</a>
+            <a href="#">About</a>
             <a href="#">Our Team</a>
             <a href="#">Our Sponsors</a>
             <a href="#">Terms of Service</a>

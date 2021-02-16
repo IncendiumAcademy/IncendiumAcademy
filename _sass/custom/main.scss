@@ -1,14 +1,13 @@
 .home-header {
   width: 100%;
   height: calc(100vh - #{$header-height});
-  // background: url($header);
-  // background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0 30%;
+  position: relative;
 
   #particles-js {
     position: absolute;
@@ -76,6 +75,11 @@
       margin-right: 10%;
     }
   }
+}
+
+#sidebar-graphic {
+  border-radius: $border-radius;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .divider {

@@ -5,6 +5,7 @@ author: Richard Hanxu
 parent: Circle Geometry
 grand_parent: Geometry  
 video_id: 1KOERb6Bea0
+nav_order: 2
 ---
 
 This is a brief extension of the [Inscribed Angle Theorem](https://incendiumacademy.org/content/math/geometry/circle-geometry/inscribed-central-angles/), 

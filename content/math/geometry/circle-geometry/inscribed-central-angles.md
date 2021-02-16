@@ -5,6 +5,7 @@ author: Richard Hanxu
 parent: Circle Geometry
 grand_parent: Geometry
 video_id: JIXOlER7qXU
+nav_order: 1
 ---
 
 Inscribed and Central Angle formulae are integral components to circle geometry problems. 

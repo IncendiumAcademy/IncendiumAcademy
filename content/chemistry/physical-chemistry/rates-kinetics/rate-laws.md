@@ -272,11 +272,13 @@ $$
 
 On their own, reversible reactions tend to reach **equilibrium**. As a refresher, equilibrium is the state at which the rate of the forward reaction equals the rate of the reverse reaction. Using the rate laws of the forward and backward reaction, we can express what equilibrium of our reversible step would look like:
 
-$$
+$$ 
+\begin{align}
 Rate_{forward} = k_1[\ce{A2}] \\
 Rate_{backward} = k_{-1}[\ce{A}]^2 \\
 k_1[\ce{A2}] = k_{-1}[\ce{A}]^2 \\
-[A] = \sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}}
+[A] = \sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}} \\
+\end{align}
 $$
 
 Therefore, if the first step was at equilibrium, we would be able to write the concentration of the intermediate in terms of the concentration of the reactants, solving our earlier issue.  
@@ -306,11 +308,13 @@ We see that the water levels of the two sides remain equal, as the rate at which
 Back to our example, we can therefore plug in our expression for $$[A]$$ into the rate law of the second step:
 
 $$
-Rate = k_2[\ce{A}][\ce{B2}] \\
-[A] = \sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}} \\
-Rate = k_2\sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}}[\ce{B2}] \\
-Rate = k_2\sqrt{\frac{k_1}{k_{-1}}} [\ce{A_2}]^{1/2}[\ce{B2}] \\
-Rate = k[\ce{A2}]^{1/2}[\ce{B2}]
+\begin{align}
+Rate &= k_2[\ce{A}][\ce{B2}] \\
+[A] &= \sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}} \\
+Rate &= k_2\sqrt{\frac{k_1[\ce{A2}]}{k_{-1}}}[\ce{B2}] \\
+&= k_2\sqrt{\frac{k_1}{k_{-1}}} [\ce{A_2}]^{1/2}[\ce{B2}] \\
+&= k[\ce{A2}]^{1/2}[\ce{B2}]
+\end{align}
 $$
 
 We now have the rate law of our reaction.

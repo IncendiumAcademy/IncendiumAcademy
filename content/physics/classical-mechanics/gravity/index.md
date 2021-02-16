@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Central Force Motion and Gravity
+title: Gravity
 nav_order: 1
 parent: Classical Mechanics
 has_children: true
