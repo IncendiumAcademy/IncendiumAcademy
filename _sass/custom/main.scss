@@ -112,13 +112,9 @@
   flex-direction: row;
 
   img {
-    margin-right: 10%;
-    width: 30%;
-    height: 30%;
-
     @include mq(md) {
       margin-right: 25%;
-      width: 35%;
+      width: 75%;
       height: 35%;
     }
   }
