@@ -4,13 +4,25 @@ import Modal from "./modal";
 import { auth } from "./auth";
 import { db } from "./database";
 
+function showLogoutBtn() {
+  document.querySelector('.aux-nav-list').innerHTML = `
+      <li class="aux-nav-list-item">
+        <a href="#" class="site-button" id="logoutBtn">Logout</a>
+      </li>
+      `;
+
+  document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    // console.log('logout');
+    auth.signOut().then(() => {
+      window.location.reload();
+    });
+  });
+}
+
 window.addEventListener("load", () => {
   const authModal = new Modal("authModal");
 
-  // Logout button
-  document.getElementById("logoutBtn")?.addEventListener("click", () => {
-    auth.signOut();
-  });
   // Submit login form
   authModal.modal
     .querySelector("#loginForm")
@@ -80,6 +92,7 @@ window.addEventListener("load", () => {
     if (user) {
       // console.log("user");
       authModal.hide();
+      if(!user.isAnonymous) showLogoutBtn();
       // document.getElementById("status").innerHTML = `
       //     ID: ${user.uid}<br>
       //     Anonymous: ${user.isAnonymous}<br>
@@ -90,15 +103,18 @@ window.addEventListener("load", () => {
       db.initialize(user.uid);
       db.updateDOM();
     } else {
+      // console.log('no user')
       // document.getElementById("status").innerText = "Not logged in.";
       db.uninitialize();
-      auth.signInAnonymously();
-      return;
+      // auth.signInAnonymously();
+      // return;
     }
     auth.getRedirectResult();
   });
 
-  document.getElementById("userData")?.addEventListener("change", (e) => {
-    db.updateProgress({ [e.target.name]: e.target.checked });
+  document.getElementById("progress_select")?.addEventListener("change", async (e) => {
+    // console.log(auth.currentUser);
+    if(!auth.currentUser) await auth.signInAnonymously();
+    db.updateProgress( e.target.name, e.target.value );
   });
 });

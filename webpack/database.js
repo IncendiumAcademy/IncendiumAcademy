@@ -42,8 +42,10 @@ class _Database {
       });
   }
 
-  updateProgress(progress) {
-    this.db.set(progress, { merge: true });
+  updateProgress(name, progress) {
+    let path = name.split('/');
+    path = path.slice(2,path.length-1);
+    this.db.collection(path[0]).doc(path.slice(1).join('/')).set({ progress: progress }, { merge: true });
   }
 
   delete() {

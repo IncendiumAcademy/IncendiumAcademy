@@ -84,6 +84,13 @@ layout: table_wrappers
         {% if page.author %}
           <h4>{{ page.author }}</h4>
         {% endif %}
+        {%- unless page.has_children or page.hide_progress -%}
+          <select name="{{ page.dir | escape }}" id="progress_select">
+            <option value="not-started">Not Started</option>
+            <option value="in-progress">In Progress</option>
+            <option value="complete">Complete</option>
+          </select>
+        {%- endunless -%}
         <hr>
 
         {% if site.heading_anchors != false %}

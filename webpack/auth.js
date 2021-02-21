@@ -83,7 +83,8 @@ class _Auth {
   }
 
   signInAnonymously() {
-    firebase
+    // console.log('anon signin');
+    return firebase
       .auth()
       .signInAnonymously()
       .catch(function (error) {
@@ -103,9 +104,6 @@ class _Auth {
     firebase
       .auth()
       .getRedirectResult()
-      // .then((result) => {
-      //   console.log("Success:", result);
-      // })
       .catch(async (error) => {
         // Manually merge data if already linked
         if (error.code == "auth/credential-already-in-use") {
@@ -134,10 +132,12 @@ class _Auth {
         }
       });
   }
+
+  get currentUser() {
+    return firebase.auth().currentUser;
+  };
 }
 
 export const auth = new _Auth();
 
-window.currentUser = function () {
-  return firebase.auth().currentUser;
-};
+// window.currentUser = auth.currentUser;
