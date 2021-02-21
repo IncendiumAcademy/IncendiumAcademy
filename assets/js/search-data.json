@@ -179,47 +179,47 @@
     "url": "/content/math/combinatorics/",
     "relUrl": "/content/math/combinatorics/"
   },"30": {
-    "doc": "Functional Equations",
-    "title": "Functional Equations",
-    "content": " ",
-    "url": "/content/math/algebra/functional-equations/",
-    "relUrl": "/content/math/algebra/functional-equations/"
-  },"31": {
-    "doc": "Systems of Equations",
-    "title": "Systems of Equations",
-    "content": " ",
-    "url": "/content/math/algebra/system-of-equations/",
-    "relUrl": "/content/math/algebra/system-of-equations/"
-  },"32": {
-    "doc": "Sequences and Series",
-    "title": "Sequences and Series",
-    "content": " ",
-    "url": "/content/math/algebra/sequences-and-series/",
-    "relUrl": "/content/math/algebra/sequences-and-series/"
-  },"33": {
-    "doc": "Algebra",
-    "title": "Algebra",
-    "content": " ",
-    "url": "/content/math/algebra/",
-    "relUrl": "/content/math/algebra/"
-  },"34": {
-    "doc": "Analytic Geometry",
-    "title": "Analytic Geometry",
-    "content": " ",
-    "url": "/content/math/geometry/analytic-geometry/",
-    "relUrl": "/content/math/geometry/analytic-geometry/"
-  },"35": {
     "doc": "Circle Geometry",
     "title": "Circle Geometry",
     "content": " ",
     "url": "/content/math/geometry/circle-geometry/",
     "relUrl": "/content/math/geometry/circle-geometry/"
-  },"36": {
+  },"31": {
+    "doc": "Analytic Geometry",
+    "title": "Analytic Geometry",
+    "content": " ",
+    "url": "/content/math/geometry/analytic-geometry/",
+    "relUrl": "/content/math/geometry/analytic-geometry/"
+  },"32": {
     "doc": "Geometry",
     "title": "Geometry",
     "content": " ",
     "url": "/content/math/geometry/",
     "relUrl": "/content/math/geometry/"
+  },"33": {
+    "doc": "Sequences and Series",
+    "title": "Sequences and Series",
+    "content": " ",
+    "url": "/content/math/algebra/sequences-and-series/",
+    "relUrl": "/content/math/algebra/sequences-and-series/"
+  },"34": {
+    "doc": "Functional Equations",
+    "title": "Functional Equations",
+    "content": " ",
+    "url": "/content/math/algebra/functional-equations/",
+    "relUrl": "/content/math/algebra/functional-equations/"
+  },"35": {
+    "doc": "Systems of Equations",
+    "title": "Systems of Equations",
+    "content": " ",
+    "url": "/content/math/algebra/system-of-equations/",
+    "relUrl": "/content/math/algebra/system-of-equations/"
+  },"36": {
+    "doc": "Algebra",
+    "title": "Algebra",
+    "content": " ",
+    "url": "/content/math/algebra/",
+    "relUrl": "/content/math/algebra/"
   },"37": {
     "doc": "Math",
     "title": "Math",
