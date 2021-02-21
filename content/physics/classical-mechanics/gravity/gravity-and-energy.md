@@ -99,7 +99,7 @@ The proof is left as an exercise to the reader.
 
 The gravitational field type a type of force field, one specifically caused by the force of gravity.
 Because gravity affects objects in the whole universe, we can assign a force vector to every point in space. The field
-describes how a mass will react to a its force of gravity with the relationship $\textbf{g} = m \cdot F$. From this we have:
+describes how a mass will react to a its force of gravity with the relationship $F = m \cdot \textbf{g}$. From this we have:
 
 $$
 \begin{equation}
