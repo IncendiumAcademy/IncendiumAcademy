@@ -47,6 +47,7 @@ layout: table_wrappers
     {%- include header.html -%}
 
     {% if page.video_id %}
+      <script>videoID = "{{ page.video_id }}"</script>
       <div class="video-bg">
         <div class="video-container">
           <iframe

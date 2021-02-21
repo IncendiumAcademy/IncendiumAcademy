@@ -7,6 +7,3 @@ grand_parent: Geometry
 video_id: JIXOlER7qXU
 nav_order: 1
 ---
-
-Inscribed and Central Angle formulae are integral components to circle geometry problems. 
-This lesson goes over all the necessary theorems that will be required on math contests. 
