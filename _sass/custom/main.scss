@@ -115,12 +115,11 @@
   justify-content: center;
   flex-direction: row;
 
-
   img {
     @include mq(md) {
       margin-right: 25%;
-      width: 75%;
-      height: 35%;
+      width: 50%;
+      height: auto;
     }
     flex-wrap: wrap;
   }
@@ -130,7 +129,7 @@
   display: flex;
   flex-direction: column;
   align-items: end;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 // Adds a divider to site nav when it's a toggle on mobile
