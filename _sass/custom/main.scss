@@ -115,12 +115,14 @@
   justify-content: center;
   flex-direction: row;
 
+
   img {
     @include mq(md) {
       margin-right: 25%;
       width: 75%;
       height: 35%;
     }
+    flex-wrap: wrap;
   }
 }
 
