@@ -344,3 +344,61 @@
     );
   }
 }
+
+.aboutnav {
+  overflow: hidden;
+  background-color: $sidebar-color;
+}
+
+.aboutnav a {
+  float:left;
+  display: inline-block;
+  color: $link-color;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border:0;
+}
+
+.aboutnav a:hover {
+  background-color: #ddd;
+}
+
+.aboutnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.aboutnav a.icon {
+  width: 50px;
+  height: 50px;
+
+}
+
+.aboutnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .aboutnav a:not(:first-child) {display: none;}
+  .aboutnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .aboutnav.responsive {position: relative;}
+  .aboutnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    top: 0;
+  }
+  .aboutnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="aboutnav" id="myaboutnav">
+  <a href="#about" class="active">About</a>
+  <a href="#team">Our Team</a>
+  <a href="#sponsors">Our Sponsors</a>
+  <a href="#tos">Terms of Service</a>
+  <a href="#blog">Blog</a>
+  <a href="javascript:void(0);" class="icon" onclick="menu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<script>
+  function menu() {
+    var x = document.getElementById("myaboutnav");
+    if (x.className === "aboutnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "aboutnav";
+    }
+  }
+</script>
