@@ -24,6 +24,8 @@ collections:
   about:
     output: true
     permalink: /:collection/:name/
+  members:
+    output: false
 
 exclude:
   - "Gemfile"
