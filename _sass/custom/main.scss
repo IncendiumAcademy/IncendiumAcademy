@@ -14,7 +14,7 @@
     width: 100%;
     height: 100%;
     background-color: #092F48;
-    background-image: linear-gradient(to bottom, #0D1B28, #024B76);
+    background-image: linear-gradient(to top, #1D2951, #1D2951);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -351,7 +351,8 @@
   }
 }
 
-// About/external pages nav bar
+
+// About/external pages nav bar -------------------------------------------------------------
 .aboutnav {
   overflow: hidden;
   background-color: $sidebar-color;
@@ -411,7 +412,7 @@
 
 
 
-/* Our Team
+/* Our Team section
 -------------------------------------------------------*/
 $max-width: 70rem;
 
@@ -514,4 +515,12 @@ $max-width: 70rem;
 html, body {
   margin: 0;
   height: 100%;
+}
+
+// ------------------------------------------ external pages heading box -----------------------------
+.about-txt-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 35%;
 }
