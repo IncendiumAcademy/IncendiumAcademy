@@ -15,29 +15,21 @@ nav_order: 2
     <h1>Co-Founders</h1>
   </div>
   <div class="team-list">
-    <article style="--avatar: url(https://jaegwanpark.ca/assets/img/prof_pic.jpg);">
-      <div>
-        <h5>Jae Gwan Park</h5>
-        <p>Co-Founder & Senior Software Engineer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://media-exp1.licdn.com/dms/image/C4D03AQFNgljcZMrAjA/profile-displayphoto-shrink_800_800/0/1573345428315?e=1619654400&v=beta&t=A8Z6K44usz-Cyy1nreZCxbmpmcCQsKVKQavya7OnIAo);">
-      <div>
-        <h5>Om Patel</h5>
-        <p>Co-Founder & Math Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.discordapp.com/attachments/762840851130089473/814363919396503592/lost_in_space.jpg);">
-      <div>
-        <h5>Abhishek Nair</h5>
-        <p>Co-Founder & Physics Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
+    {%- assign members = site.members | where_exp: "member","member.path contains '/co-founder'" -%}
+    {%- for member in site.members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image">
+          <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+          <div class="bio">
+            {{ member }}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
   </div>
 
   <div class="center">
@@ -45,37 +37,21 @@ nav_order: 2
   </div>
 
   <div class="team-list">
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Josh Friedman</h5>
-        <p>Senior Software Engineer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Daniel Voznyy</h5>
-        <p>Senior Software Engineer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Marina Semenova</h5>
-        <p>Senior Software Engineer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Bill Bai</h5>
-        <p>Senior Software Engineer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
+    {%- assign members = site.members | where_exp: "member","member.path contains '/developers'" -%}
+    {%- for member in site.members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image">
+          <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+          <div class="bio">
+            {{ member }}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
   </div>
 
   <div class="center">
@@ -83,53 +59,21 @@ nav_order: 2
   </div>
 
   <div class="team-list">
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Christopher Trevisan</h5>
-        <p>Math Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Eric Myzelev</h5>
-        <p>Physics Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Richard Hanxu</h5>
-        <p>Math Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Max Li</h5>
-        <p>Math Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Andy Cai</h5>
-        <p>Chemistry Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Peter Lin</h5>
-        <p>Physics Lead</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
+    {%- assign members = site.members | where_exp: "member","member.path contains '/content'" -%}
+    {%- for member in site.members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image">
+          <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+          <div class="bio">
+            {{ member }}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
   </div>
 
   <div class="center">
@@ -137,36 +81,20 @@ nav_order: 2
   </div>
 
   <div class="team-list">
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Hannah Kim</h5>
-        <p>Director of Marketing</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Nayaab Ali</h5>
-        <p>Marketing Manager</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Megan Holmes</h5>
-        <p>Designer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
-
-    <article style="--avatar: url(https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png);">
-      <div>
-        <h5>Mason Roposa</h5>
-        <p>Designer</p>
-        <a href="#">View bio</a>
-      </div>
-    </article>
+    {%- assign members = site.members | where_exp: "member","member.path contains '/marketing'" -%}
+    {%- for member in site.members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image">
+          <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+          <div class="bio">
+            {{ member }}
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
   </div>
 </section>
