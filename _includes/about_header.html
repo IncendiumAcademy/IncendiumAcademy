@@ -1,12 +1,14 @@
-<div class="aboutnav" id="myaboutnav">
-  <a href="#about" class="active">About</a>
-  <a href="#team">Our Team</a>
-  <a href="#sponsors">Our Sponsors</a>
-  <a href="#tos">Terms of Service</a>
-  <a href="#blog">Blog</a>
-  <a href="javascript:void(0);" class="icon" onclick="menu()">
-    <i class="fa fa-bars"></i>
-  </a>
+<div class="center">
+  <div class="aboutnav" id="myaboutnav">
+    {% assign sorted_navorder = site.about | sort: "nav_order" %}
+    {% for guh in sorted_navorder %}
+      <a href="{{ guh.permalink }}" {% if guh.url == page.url %} class="active" {% endif %}> {{ guh.title }} </a>
+    {% endfor %}
+
+    <a href="javascript:void(0);" class="icon" onclick="menu()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
 
 <script>
