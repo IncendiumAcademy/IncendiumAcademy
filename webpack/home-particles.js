@@ -3,7 +3,7 @@ import "particles.js";
 const particleConfig = {
   "particles": {
     "number": {
-      "value": 50,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
