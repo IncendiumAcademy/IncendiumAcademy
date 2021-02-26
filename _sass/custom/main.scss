@@ -14,7 +14,7 @@
     width: 100%;
     height: 100%;
     background-color: #092F48;
-    background-image: linear-gradient(to top, #1D2951, #1D2951);
+    background-image: linear-gradient(to top, #161f3e, #161F3E);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -22,14 +22,15 @@
   }
 
   h1 {
-    @include fs-10;
-    line-height: 1em;
+    font-size: 80px !important;
+    font-weight: 400;
+    line-height: $body-heading-line-height;
     margin-bottom: 2%;
     color: white
   }
 
   p {
-    @include fs-5;
+    font-size: 20px !important;
     line-height: 1.5em;
     color: lightgray;
   }
@@ -562,4 +563,10 @@ html, body {
   align-items: center;
   justify-content: center;
   padding: 2% 35%;
+}
+
+
+.main-header{
+  @include fs-10;
+  font-weight: 300;
 }
