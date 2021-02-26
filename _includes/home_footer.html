@@ -19,12 +19,11 @@
             {% endif %}
         </div>
         <div class="column">
-            <a href="/about/">About</a>
-            <a href="/team/">Our Team</a>
-            <a href="/sponsors/">Our Sponsors</a>
-            <a href="/tos/">Terms of Service</a>
-            <a href="/blog/">Blog</a>
-            <a href="/contact/">Contact</a>
+            {% assign sorted_navorder = site.about | sort: "nav_order" %}
+            {%- for page in sorted_navorder -%}
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
+            {%- endfor -%}
+
         </div>
     </div>
     <footer class="main-footer">
