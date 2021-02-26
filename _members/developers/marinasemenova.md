@@ -1,5 +1,8 @@
 ---
 name: Marina Semenova
 role: Senior Software Engineer
-pic: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png
+pic: https://cdn.discordapp.com/attachments/617406148160651280/814682244203544606/pfp_low_res_tho_-_marina_semenova.jpg
 ---
+Hello! :) I am a member of the development team and I mostly focus on the front-end. 
+I enjoy working on projects that promote change and accessibility,
+which I intend to pursue in the future, as well as with Incendium Academy.
