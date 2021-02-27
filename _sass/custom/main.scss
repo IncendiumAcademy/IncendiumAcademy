@@ -40,6 +40,7 @@
   display: flex;
   align-items: center;
   padding: 2% 25%;
+  justify-content: center;
 }
 
 .left {
@@ -497,7 +498,7 @@ $max-width: 70rem;
             align-items: center;
             text-align: center;
             font-style: italic;
-            background-color: white;
+            background-color: $sidebar-color;
             padding: 1rem;
             transform: rotateX(180deg);
           }
@@ -562,7 +563,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2% 35%;
+  padding: 2% 30%;
 }
 
 
