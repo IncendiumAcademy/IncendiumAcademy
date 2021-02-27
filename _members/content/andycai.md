@@ -1,5 +1,5 @@
 ---
 name: Andy Cai
 role: Chemistry Lead
-pic: https://cdn.discordapp.com/attachments/605437521912004608/814685595154120774/image0.jpg
+pic: https://cdn.discordapp.com/attachments/617406148160651280/814890394848460843/andy.jpg
 ---

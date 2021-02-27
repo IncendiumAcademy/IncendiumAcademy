@@ -1,5 +1,5 @@
 ---
 name: Max Li
 role: Senior Math Content Creator
-pic: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png
+pic: https://cdn.discordapp.com/attachments/617406148160651280/814890399771394118/max.jpg
 ---
