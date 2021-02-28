@@ -103,4 +103,25 @@ window.addEventListener("load", () => {
   document.getElementById("userData")?.addEventListener("change", (e) => {
     db.updateProgress({ [e.target.name]: e.target.checked });
   });
+
+  const overlap = document.getElementById("overlap")
+
+  const chemistry = document.getElementById("chemistry")
+  const math = document.getElementById("math")
+  const physics = document.getElementById("physics")
+
+  overlap.onmouseover = function() {
+    chemistry.classList.remove("chemistryTransOut");
+    physics.classList.remove("physicsTransOut");
+    chemistry.classList.add("chemistryTransIn");
+    physics.classList.add("physicsTransIn");
+  }
+
+  overlap.onmouseout = function() {
+    chemistry.classList.remove("chemistryTransIn");
+    physics.classList.remove("physicsTransIn");
+    chemistry.classList.add("chemistryTransOut");
+    physics.classList.add("physicsTransOut");
+  }
 });
+
