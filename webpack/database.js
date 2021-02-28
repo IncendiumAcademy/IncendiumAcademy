@@ -5,7 +5,6 @@ import "firebase/firestore";
  * Database class, handles db-related functions and updates progress tracking
  */
 class _Database {
-
   /**
    * Initializes DB
    *
@@ -45,56 +44,92 @@ class _Database {
    * Add complete, in-progress, to the circles
    */
 
-  updateDOM() {
+  async updateDOM() {
     console.log("DOM updated");
 
-    let path = window.location.pathname.split('/');
-    path = path.slice(2,path.length-1);
+    let progress = (await this.db.collection("lessons").get()).docs.reduce(
+      (docs, doc) => {
+        docs[doc.id] = doc.data().progress
+        return docs
+      },
+      {}
+    );
+    // console.log(progress);
+    Object.entries(progress).forEach(([lessonID, progress]) => {
+      // Sets sidebar progress
+      document.querySelector(
+        `#site-nav .progress[name="${this._convertID(lessonID)}"]`
+      ).className = `progress ${progress}`;
 
-    this.db
-      .collection(path[0])
-      .doc(path.slice(1).join('/'))
-      .get()
-      .then((docSnapshot) => {
-        if (docSnapshot.exists) {
-          let progress = docSnapshot.data();
-          console.log(`Snapshot exists`, progress)
-          Object.keys(progress).forEach((key) => {
-            console.log("Current progress: ", progress[key])
-            document.getElementById('site-nav').getElementsByClassName('progress')[0]
-              .className += ` ${progress[key]}`
-            let options = document.getElementById('progress_select').getElementsByTagName("option")
-            for(let x = 0; x < options.length; x++){
-              let option = options[x]
-              console.log(option.value)
-              if(option.value === progress[key]){
-                 option.setAttribute("selected", "selected")
-               }
-            }
-
-
-            // document.querySelector(`input[name='${key}']`).checked =
-          });
-        } else {
-          console.log(`Snapshot does not exist.`)
-          document
-            .querySelectorAll("input[type=checkbox]")
-            .forEach((checkbox) => (checkbox.checked = false));
+      if (lessonID == this._convertPath(window.location.pathname)) {
+        // Sets dropdown progress
+        let options = document
+          .getElementById("progress_select")
+          .getElementsByTagName("option");
+        for (let x = 0; x < options.length; x++) {
+          let option = options[x];
+          // console.log(option.value)
+          if (option.value === progress) {
+            option.setAttribute("selected", "selected");
+          }
         }
-      })
-      .catch((error) => {
-        console.error(error.code, error.message);
-      });
+      }
+    })
+
+    // this.db
+    //   .collection("lessons")
+    //   .get()
+    //   .then((querySnapshot) =>
+    //     querySnapshot.forEach((docSnapshot) => {
+    //       if (docSnapshot.exists) {
+    //         let progress = docSnapshot.data()
+    //         console.log(`Snapshot exists`, progress)
+    //         console.log("Current progress: ", progress.progress)
+    //         document.querySelector(
+    //           `#site-nav .progress[name="${this._convertID(docSnapshot.id)}"]`
+    //         ).className = `progress ${progress.progress}`
+    //         let options = document
+    //           .getElementById("progress_select")
+    //           .getElementsByTagName("option")
+    //         for (let x = 0; x < options.length; x++) {
+    //           let option = options[x]
+    //           console.log(option.value)
+    //           if (option.value === progress.progress) {
+    //             option.setAttribute("selected", "selected")
+    //           }
+    //         }
+    //       } else {
+    //         console.log(`Snapshot does not exist.`)
+    //         document
+    //           .querySelectorAll("input[type=checkbox]")
+    //           .forEach((checkbox) => (checkbox.checked = false))
+    //       }
+    //     })
+    //   )
+    //   .catch((error) => {
+    //     console.error(error.code, error.message)
+    //   })
   }
 
   updateProgress(name, progress) {
-    let path = name.split('/');
-    path = path.slice(2,path.length-1);
-    this.db.collection(path[0]).doc(path.slice(1).join('/')).set({ progress: progress }, { merge: true });
+    this.db
+      .collection("lessons")
+      .doc(this._convertPath(name))
+      .set({ progress: progress }, { merge: true })
+      .then(() => this.updateDOM());
   }
 
   delete() {
     this.db.delete();
+  }
+
+  _convertPath(path) {
+    let new_path = path.split("/");
+    return new_path.slice(2, new_path.length - 1).join("\\");
+  }
+
+  _convertID(id) {
+    return "/content/" + id.replace(/\\/g, "/") + "/";
   }
 }
 

@@ -118,7 +118,7 @@
                     {%- for grand_child in grand_children_list -%}
                       <li class="nav-list-item {% if page.url == grand_child.url %} active{% endif %}">
                         <div class="nav-list-progress-indicator">
-                          <span class="progress"></span>
+                          <span class="progress" name="{{ grand_child.url | escape }}"></span>
                         </div>
                         <a href="{{ grand_child.url | absolute_url }}" class="nav-list-link{% if page.url == grand_child.url %} active{% endif %}">{{ grand_child.title }}</a>
                       </li>
