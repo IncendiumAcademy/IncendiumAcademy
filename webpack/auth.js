@@ -2,6 +2,7 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import { db } from "./database";
 
+/* Firebase API Key*/
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyB75zRrXt9rHoi9mObhTnRfenK6g5bnHTk",
   authDomain: "incendium-academy.firebaseapp.com",
@@ -13,35 +14,44 @@ const FIREBASE_CONFIG = {
 };
 
 class _Auth {
+  /**
+   * Auth class for authenticating users using Firebase
+   */
   constructor() {
     firebase.initializeApp(FIREBASE_CONFIG);
   }
 
+  /**
+   * Validates user's email and ensures that it follows correct conventions (name@email.com)
+   *
+   * @param {string} email  User's email address
+   * @returns {boolean}     Whether email is valid or not
+   */
   validateEmail(email) {
     const EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/gi;
     return EMAIL_REGEX.test(email);
   }
 
+  /**
+   * Validates password and ensures that it has at least 8 characters, 1 uppercase character, 1 lowercase character, and
+   * 1 symbol
+   *
+   * @param {string} password User's password
+   * @returns {boolean}       Whether password is valid or not
+   */
   validatePassword(password) {
-    // min 8 characters, 1 upper, 1 lower, 1 number, 1 symbol
     const PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/g;
     return PASSWORD_REGEX.test(password);
   }
 
+  /**
+   * Creates user's account in the Firebase DB
+   *
+   * @param {string} email    User's email
+   * @param {string} password User's password
+   * @param {string} name     User's name
+   */
   createUserWithEmailAndPassword(email, password, name) {
-    // firebase
-    //   .auth()
-    //   .createUserWithEmailAndPassword(email, password)
-    //   .then((user) => {
-    //     console.log(user);
-    //     user.user.updateProfile({ displayName: name });
-    //     user.user.sendEmailVerification();
-    //   })
-    //   .catch((error) => {
-    //     alert(error.message);
-    //     console.log(error);
-    //   });
-
     let credential = firebase.auth.EmailAuthProvider.credential(
       email,
       password
@@ -56,20 +66,24 @@ class _Auth {
         user.user.sendEmailVerification();
       })
       .catch((error) => {
-        // alert(error.message);
         console.error(error.code, error.message);
       });
   }
 
+  /**
+   * Signs user in
+   *
+   * @param {string} email    User's email
+   * @param {string} password User's password
+   * @returns {Promise<firebase.auth.UserCredential>} Sign in confirmation
+   */
   signInWithEmailAndPassword(email, password) {
     return firebase.auth().signInWithEmailAndPassword(email, password);
-
-    // let credential = firebase.auth.EmailAuthProvider.credential(email, password);
-    // firebase
-    //   .auth()
-    //   .currentUser.linkWithCredential(credential)
   }
 
+  /**
+   * Allows user to sign in directly using their Google account
+   */
   signInWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().useDeviceLanguage();
@@ -82,8 +96,13 @@ class _Auth {
       });
   }
 
+  /**
+   * Allows user to sign in anonymously and save progress
+   *
+   * @returns {Promise<firebase.auth.UserCredential | void>}
+   */
   signInAnonymously() {
-    // console.log('anon signin');
+    console.log('anon signin'); //TODO: Remove this later
     return firebase
       .auth()
       .signInAnonymously()
@@ -92,10 +111,20 @@ class _Auth {
       });
   }
 
+  /**
+   * Signs user out
+   *
+   * @returns {Promise<void>}
+   */
   signOut() {
     return firebase.auth().signOut();
   }
 
+  /**
+   * Observer for changes to user's sign-in state
+   *
+   * @param callback
+   */
   onAuthStateChanged(callback) {
     firebase.auth().onAuthStateChanged(callback);
   }

@@ -4,6 +4,9 @@ import Modal from "./modal";
 import { auth } from "./auth";
 import { db } from "./database";
 
+/**
+ * Logout button to sign user out
+ */
 function showLogoutBtn() {
   document.querySelector('.aux-nav-list').innerHTML = `
       <li class="aux-nav-list-item">
@@ -54,6 +57,7 @@ window.addEventListener("load", () => {
         });
       }
     });
+
   // Submit signup form
   authModal.modal
     .querySelector("#signupForm")
@@ -68,12 +72,12 @@ window.addEventListener("load", () => {
         .forEach((el) => el.remove());
 
       // Validate
-      if (email == "" || !auth.validateEmail(email)) {
+      if (email === "" || !auth.validateEmail(email)) {
         e.target.email.insertAdjacentHTML(
           "afterend",
           `<sub class="errormsg">Please enter a valid email address.</sub>`
         );
-      } else if (password == "" || !auth.validatePassword(password)) {
+      } else if (password === "" || !auth.validatePassword(password)) {
         e.target.password.insertAdjacentHTML(
           "afterend",
           `<sub class="errormsg">Password must contain at least one uppercase letter, one lowercase letter, one number, and one speecial symbol (@,$,!,%,*,?,&,#).</sub>`
@@ -88,7 +92,7 @@ window.addEventListener("load", () => {
   });
 
   auth.onAuthStateChanged((user) => {
-    // console.log("auth changed");
+    console.log("auth changed"); //TODO: Remove this later
     if (user) {
       // console.log("user");
       authModal.hide();
