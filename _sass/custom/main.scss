@@ -39,6 +39,8 @@
   display: flex;
   align-items: center;
   padding: 4% 14%;
+  perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .left {
@@ -80,6 +82,7 @@
 #sidebar-graphic {
   border-radius: $border-radius;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
 }
 
 .divider {
@@ -106,7 +109,7 @@
 .footer-main {
   background-color: $sidebar-color;
   width: inherit;
-  padding: 2% 14%;
+  padding: 2% 14% 0 14%;
 }
 
 .footer-content {
@@ -345,5 +348,85 @@
     margin-left: calc(
             (100vw - #{$nav-width + $content-width}) / 2
     );
+  }
+}
+
+#overlap {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+#chemistry {
+  position: relative;
+  bottom: 30px;
+  right: 30px;
+}
+
+.chemistryTransIn {
+  animation: chemistryAnimationIn 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes chemistryAnimationIn {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(-20deg) translate(-75px, -25px);
+  }
+}
+
+.chemistryTransOut {
+  animation: chemistryAnimationOut 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes chemistryAnimationOut {
+  from {
+    transform: rotate(-20deg) translate(-75px, -25px);
+  }
+  to {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}
+
+#math {
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+#physics {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.physicsTransIn {
+  animation: physicsAnimationIn 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes physicsAnimationIn {
+  from {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    transform: rotate(20deg) translate(75px, 0px);
+  }
+}
+
+.physicsTransOut {
+  animation: physicsAnimationOut 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes physicsAnimationOut {
+  from {
+    transform: rotate(20deg) translate(75px, 0px);
+  }
+  to {
+    transform: rotate(0deg) translate(0px, 0px);
   }
 }
