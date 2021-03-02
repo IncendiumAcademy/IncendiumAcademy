@@ -372,11 +372,11 @@
 }
 
 .aboutnav a:hover {
-  background-color: #ddd;
+  background-color: $grey-lt-300;
 }
 
 .aboutnav a.active {
-  background-color: #4CAF50;
+  background-color: $btn-primary-color;
   color: white;
 }
 
@@ -504,7 +504,7 @@ $max-width: 70rem;
           }
         }
 
-        .active .image {
+        .image-container:hover .image {
           transform: rotateX(180deg);
         }
 
@@ -518,8 +518,8 @@ $max-width: 70rem;
           height: 100%;
           display: block;
           transform: translate(var(--space), var(--space));
-          transition: all .3s ease-in;
-          background: $grey-dk-000;
+          transition: all .3s .3s ease-in;
+          background: $btn-primary-color;
         }
       }
 
