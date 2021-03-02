@@ -1,7 +1,10 @@
 <div class="footer-main">
     <div class="footer-content">
-        <img src="{{ site.sponsor }}">
-        <div class="column left">
+        <div class="column">
+            <img src="{{ site.logo }}">
+            <img src="{{ site.sponsor }}">
+        </div>
+        <div class="column">
             {% if site.drop_title %}
             {{ site.drop_title }}
             {% for link in site.drop_links %}
@@ -15,12 +18,12 @@
             {% endfor %}
             {% endif %}
         </div>
-        <div class="column" style="align-self: flex-end;">
-            <a href="#" style="text-decoration: none">About</a>
-            <a href="#">Our Team</a>
-            <a href="#">Our Sponsors</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact</a>
+        <div class="column">
+            {% assign sorted_navorder = site.about | sort: "nav_order" %}
+            {%- for page in sorted_navorder -%}
+                <a href="{{ page.permalink }}">{{ page.title }}</a>
+            {%- endfor -%}
+
         </div>
     </div>
     <footer class="main-footer">

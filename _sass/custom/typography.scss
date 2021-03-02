@@ -10,3 +10,9 @@ h1,
   @include fs-10;
   font-weight: 300;
 }
+
+h2,
+.text-alpha {
+  @include fs-6;
+  font-weight: 500;
+}

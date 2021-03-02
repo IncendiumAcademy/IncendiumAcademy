@@ -17,7 +17,15 @@ title: Incendium Academy
 description: Free Online STEM Contest Preparation for Everyone
 logo: "/assets/images/logo.png"
 sponsor: "/assets/images/sponsor.png"
+
 permalink: pretty
+
+collections:
+  about:
+    output: true
+    permalink: /:collection/:name/
+  members:
+    output: false
 
 exclude:
   - "Gemfile"
@@ -115,7 +123,7 @@ category_path_level: 1
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "Copyright &copy; 2020 Incendium Academy. Content distributed under CC BY-NC-SA 4.0. Theme by an <a href=\"https://github.com/IncendiumAcademy/IncendiumAcademy/blob/main/LICENSE\">MIT license.</a>"
+footer_content: "Copyright &copy; 2020-2021 Incendium Academy. Content distributed under CC BY-NC-SA 4.0. Theme by an <a href=\"https://github.com/IncendiumAcademy/IncendiumAcademy/blob/main/LICENSE\">MIT license.</a>"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter

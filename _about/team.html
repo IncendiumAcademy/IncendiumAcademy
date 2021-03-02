@@ -1,0 +1,103 @@
+---
+layout: about
+title: Our Team
+desc: Meet the students who made this all possible.
+permalink: /team/
+nav_order: 2
+---
+<section class="team">
+  <div class="center">
+    <h1>Co-Founders</h1>
+  </div>
+  <div class="team-list">
+    {%- assign members = site.members | where_exp: "member","member.path contains '/co-founder'" -%}
+    {%- for member in members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image-container">
+          <div class="image">
+            <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+            <div class="bio">
+              {{ member }}
+            </div>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <div class="center">
+    <h1>Developers</h1>
+  </div>
+
+  <div class="team-list">
+    {%- assign members = site.members | where_exp: "member","member.path contains '/developers'" -%}
+    {%- for member in members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image-container">
+          <div class="image">
+            <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+            <div class="bio">
+              {{ member }}
+            </div>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <div class="center">
+    <h1>Content Creators</h1>
+  </div>
+
+  <div class="team-list">
+    {%- assign members = site.members | where_exp: "member","member.path contains '/content'" -%}
+    {%- for member in members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image-container">
+          <div class="image">
+            <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+            <div class="bio">
+              {{ member }}
+            </div>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <div class="center">
+    <h1>Marketing Team</h1>
+  </div>
+
+  <div class="team-list">
+    {%- assign members = site.members | where_exp: "member","member.path contains '/marketing'" -%}
+    {%- for member in members -%}
+      <article>
+        <div class="info">
+          <h5>{{ member.name }}</h5>
+          <p>{{ member.role }}</p>
+        </div>
+        <div class="image-container">
+          <div class="image">
+            <img src="{{ member.pic | absolute_url }}" alt="{{ member.name }}">
+            <div class="bio">
+              {{ member }}
+            </div>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>

@@ -3,10 +3,10 @@ import "particles.js";
 const particleConfig = {
   "particles": {
     "number": {
-      "value": 100,
+      "value": 80,
       "density": {
         "enable": true,
-        "value_area": 630
+        "value_area": 800
       }
     },
     "color": {
