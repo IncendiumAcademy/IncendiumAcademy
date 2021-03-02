@@ -57,9 +57,14 @@ $pi: 3.14159265358979;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     $circumference: #{214 * 2 * $pi};
-    --percent: 100;
+    --percent: 0;
     stroke-dasharray: $circumference $circumference;
     stroke-dashoffset: calc(#{$circumference} - var(--percent) / 100 * #{$circumference});
+
+    &.complete {
+      fill: #00aa39;
+      stroke: #00aa39;
+    }
   }
 }
 
