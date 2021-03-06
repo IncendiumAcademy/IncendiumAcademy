@@ -102,7 +102,6 @@ class _Auth {
    * @returns {Promise<firebase.auth.UserCredential | void>}
    */
   signInAnonymously() {
-    console.log('anon signin'); //TODO: Remove this later
     return firebase
       .auth()
       .signInAnonymously()

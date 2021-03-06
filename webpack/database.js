@@ -12,7 +12,6 @@ class _Database {
    */
   initialize(uid) {
     this.db = firebase.firestore().collection("users").doc(uid);
-    console.log("db initialized"); //TODO: Remove this later
   }
 
   /**
@@ -20,7 +19,6 @@ class _Database {
    */
   uninitialize() {
     this.db = null;
-    console.log("db uninitialized"); //TODO: Remove this later
   }
 
   /**
@@ -40,9 +38,6 @@ class _Database {
   }
 
   async updateDOM() {
-    console.log("DOM updated");
-    // console.log("math\\algebra\\functional-equations\\injectivity-surjectivity-bijectivity-involutions".split('\\'))
-
     let progress = (await this.db.collection("lessons").get()).docs.reduce(
       (docs, doc) => {
         docs[doc.id] = doc.data().progress
@@ -64,7 +59,6 @@ class _Database {
     Object.entries(progress).forEach(([lessonID, progress]) => {
 
       let lesson_categories = this._convertID(lessonID).split('/').slice(0, -2).join('/') + "/"
-      // console.log(lesson_categories)
 
       // Calculates a completion score for lesson
       if (typeof completion_percentages[lesson_categories] === "undefined"){ // isNaN(completion_percentages[lesson_categories])
@@ -93,11 +87,8 @@ class _Database {
           .getElementById("progress_select")
           .getElementsByTagName("option");
 
-        // console.log('options: ', options)
-
         for (let x = 0; x < options.length; x++) {
           let option = options[x];
-          // console.log(option.value)
           if (option.value === progress) {
             option.setAttribute("selected", "selected");
           }
@@ -105,7 +96,6 @@ class _Database {
       }
     })
 
-    // console.log(completion_percentages)
     // Updates the progress % circles to reflect the progress completed for each category
     for(let key in completion_percentages){
       let circle = document.querySelector(`#site-nav #nav-list-head .nav-list-item .progress-ring__circle[name="${key}"]`)
@@ -121,41 +111,6 @@ class _Database {
       }
 
     }
-
-
-    // this.db
-    //   .collection("lessons")
-    //   .get()
-    //   .then((querySnapshot) =>
-    //     querySnapshot.forEach((docSnapshot) => {
-    //       if (docSnapshot.exists) {
-    //         let progress = docSnapshot.data()
-    //         console.log(`Snapshot exists`, progress)
-    //         console.log("Current progress: ", progress.progress)
-    //         document.querySelector(
-    //           `#site-nav .progress[name="${this._convertID(docSnapshot.id)}"]`
-    //         ).className = `progress ${progress.progress}`
-    //         let options = document
-    //           .getElementById("progress_select")
-    //           .getElementsByTagName("option")
-    //         for (let x = 0; x < options.length; x++) {
-    //           let option = options[x]
-    //           console.log(option.value)
-    //           if (option.value === progress.progress) {
-    //             option.setAttribute("selected", "selected")
-    //           }
-    //         }
-    //       } else {
-    //         console.log(`Snapshot does not exist.`)
-    //         document
-    //           .querySelectorAll("input[type=checkbox]")
-    //           .forEach((checkbox) => (checkbox.checked = false))
-    //       }
-    //     })
-    //   )
-    //   .catch((error) => {
-    //     console.error(error.code, error.message)
-    //   })
   }
 
   updateProgress(name, progress) {

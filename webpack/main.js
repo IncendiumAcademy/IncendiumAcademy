@@ -16,7 +16,6 @@ function showLogoutBtn() {
 
   document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
     e.preventDefault();
-    // console.log('logout');
     auth.signOut().then(() => {
       window.location.reload();
     });
@@ -62,7 +61,6 @@ window.addEventListener("load", () => {
   authModal.modal
     .querySelector("#signupForm")
     .addEventListener("submit", (e) => {
-      // console.log("sign up");
       e.preventDefault();
       let name = e.target.name.value;
       let email = e.target.email.value;
@@ -92,32 +90,18 @@ window.addEventListener("load", () => {
   });
 
   auth.onAuthStateChanged((user) => {
-    console.log("auth changed"); //TODO: Remove this later
     if (user) {
-      // console.log("user");
       authModal.hide();
       if(!user.isAnonymous) showLogoutBtn();
-      // document.getElementById("status").innerHTML = `
-      //     ID: ${user.uid}<br>
-      //     Anonymous: ${user.isAnonymous}<br>
-      //     Name: ${user.displayName || user.providerData[0]?.displayName}<br>
-      //     Email: ${user.email}<br>
-      //     Email Verified: ${user.emailVerified}
-      //   `;
       db.initialize(user.uid);
       db.updateDOM();
     } else {
-      // console.log('no user')
-      // document.getElementById("status").innerText = "Not logged in.";
       db.uninitialize();
-      // auth.signInAnonymously();
-      // return;
     }
     auth.getRedirectResult();
   });
 
   document.getElementById("progress_select")?.addEventListener("change", async (e) => {
-    // console.log(auth.currentUser);
     if(!auth.currentUser) await auth.signInAnonymously();
     db.updateProgress( e.target.name, e.target.value );
   });
