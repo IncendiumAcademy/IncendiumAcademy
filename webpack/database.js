@@ -39,13 +39,9 @@ class _Database {
     return (await this.db.get()).data();
   }
 
-  /**
-   * Set the dropdown value to the correct value
-   * Add complete, in-progress, to the circles
-   */
-
   async updateDOM() {
     console.log("DOM updated");
+    // console.log("math\\algebra\\functional-equations\\injectivity-surjectivity-bijectivity-involutions".split('\\'))
 
     let progress = (await this.db.collection("lessons").get()).docs.reduce(
       (docs, doc) => {
@@ -54,18 +50,51 @@ class _Database {
       },
       {}
     );
-    // console.log(progress);
-    Object.entries(progress).forEach(([lessonID, progress]) => {
-      // Sets sidebar progress
-      document.querySelector(
-        `#site-nav .progress[name="${this._convertID(lessonID)}"]`
-      ).className = `progress ${progress}`;
 
-      if (lessonID == this._convertPath(window.location.pathname)) {
+    // object to store the completion %s
+    let completion_percentages = {}
+
+    // calculates how much each is worth when calculating percentages
+    let formula = {
+      "not-started": 0,
+      "in-progress": 0,
+      "complete": 1
+    }
+
+    Object.entries(progress).forEach(([lessonID, progress]) => {
+
+      let lesson_categories = this._convertID(lessonID).split('/').slice(0, -2).join('/') + "/"
+      // console.log(lesson_categories)
+
+      // Calculates a completion score for lesson
+      if (typeof completion_percentages[lesson_categories] === "undefined"){ // isNaN(completion_percentages[lesson_categories])
+        completion_percentages[lesson_categories] = {
+          "sum": formula[progress],
+          "total": 1
+        }
+      } else {
+        completion_percentages[lesson_categories]["sum"] += formula[progress]
+        completion_percentages[lesson_categories]["total"] += 1
+      }
+
+      // Sets sidebar progress
+      try{
+        document.querySelector(
+          `#site-nav .progress[name="${this._convertID(lessonID)}"]`
+        ).className = `progress ${progress}`;
+      }catch (e){
+        // console.error(lessonID, e)
+      }
+
+      if (lessonID === this._convertPath(window.location.pathname)) {
+
         // Sets dropdown progress
         let options = document
           .getElementById("progress_select")
           .getElementsByTagName("option");
+
+        // console.log('options: ', options)
+
         for (let x = 0; x < options.length; x++) {
           let option = options[x];
           // console.log(option.value)
@@ -75,6 +104,24 @@ class _Database {
         }
       }
     })
+
+    // console.log(completion_percentages)
+    // Updates the progress % circles to reflect the progress completed for each category
+    for(let key in completion_percentages){
+      let circle = document.querySelector(`#site-nav #nav-list-head .nav-list-item .progress-ring__circle[name="${key}"]`)
+      if(circle == null) continue
+
+      let slice = completion_percentages[key]
+      let percent = (slice['sum'] / slice['total']) * 100
+
+      if(percent === 100){
+        circle.classList.add("complete")
+      }else{
+        circle.style.setProperty("--percent", `${percent}`)
+      }
+
+    }
+
 
     // this.db
     //   .collection("lessons")

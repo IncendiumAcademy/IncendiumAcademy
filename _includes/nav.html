@@ -8,7 +8,7 @@
     {% if item.nav_exclude != true and item.title != nil %}
       {% comment %}
       Categories are defined by a specific level of each page's path in the site.
-      For instance, when the level is 1, categries are defined as /*/<category>/*.
+      For instance, when the level is 1, categories are defined as /*/<category>/*.
       The navbar will show all only the documents within the same category if a category_path_level is set in the site config.
       {% endcomment %}
       {% if site.category_path_level == nil or item_category[site.category_path_level] == page_category[site.category_path_level] %}
@@ -79,7 +79,7 @@
 
   {%- for node in pages_list -%}
     {%- if node.parent == nil -%}
-      <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
+      <li name={{ node.title }} id="nav-list-head" class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
         {%- if page.parent == node.title or page.grand_parent == node.title -%}
           {%- assign first_level_url = node.url | absolute_url -%}
         {%- endif -%}
@@ -98,7 +98,7 @@
               <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
                 <div class="nav-list-progress-indicator">
                   <svg xmlns="http://www.w3.org/2000/svg" class="progress-ring" viewBox="0 0 519 519">
-                    <circle class="progress-ring__circle" stroke="#4d4d4d" stroke-width="91" fill="transparent" cx="259.5" cy="259.5" r="214"/>
+                    <circle name="{{ child.url }}" class="progress-ring__circle" stroke="#4d4d4d" stroke-width="91" fill="transparent" cx="259.5" cy="259.5" r="214"/>
                   </svg>
                 </div>
                 {%- if page.url == child.url or page.parent == child.title -%}
