@@ -6948,8 +6948,95 @@ mjx-container {
   overflow-y: hidden;
   max-width: 100%; }
 
+#progress_select {
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  padding: 0.5rem 1rem; }
+
 details {
   padding-left: 1%;
   border-left: 2px solid #7253ed;
   height: auto;
   background-color: #f5f6fa; }
+
+.nav-list-item > a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden; }
+
+.site-nav > .nav-list > .nav-list-item > .nav-list > .nav-list-item {
+  margin-left: 1.5rem; }
+  @media (min-width: 56.25rem) {
+    .site-nav > .nav-list > .nav-list-item > .nav-list > .nav-list-item {
+      margin-left: 1rem; } }
+
+.nav-list .nav-list-item .nav-list-progress-indicator {
+  width: 3rem;
+  height: 3rem;
+  padding: 1rem;
+  position: absolute;
+  left: -1.5rem; }
+  @media (min-width: 56.25rem) {
+    .nav-list .nav-list-item .nav-list-progress-indicator {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      padding: 0.6666666667rem;
+      left: 0; } }
+  .nav-list .nav-list-item .nav-list-progress-indicator .progress {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4d4d4d;
+    background-image: url("/assets/images/incomplete.svg");
+    position: relative; }
+    .nav-list .nav-list-item .nav-list-progress-indicator .progress.in-progress {
+      background-color: #edb041;
+      background-image: url("/assets/images/inprogress.svg"); }
+    .nav-list .nav-list-item .nav-list-progress-indicator .progress.complete {
+      background-color: #00aa39;
+      background-image: url("/assets/images/complete.svg"); }
+  .nav-list .nav-list-item .nav-list-progress-indicator .progress-ring {
+    display: block; }
+  .nav-list .nav-list-item .nav-list-progress-indicator .progress-ring__circle {
+    transition: stroke-dashoffset 0.2s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    --percent: 0;
+    stroke-dasharray: 1344.6016557364 1344.6016557364;
+    stroke-dashoffset: calc(1344.6016557364 - var(--percent) / 100 * 1344.6016557364); }
+    .nav-list .nav-list-item .nav-list-progress-indicator .progress-ring__circle.complete {
+      fill: #00aa39;
+      stroke: #00aa39; }
+
+/* Line before indicator */
+.nav-list .nav-list-item:not(:first-child) > .nav-list-progress-indicator .progress::before {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 2px;
+  height: calc(1.5rem - 50%);
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 1px);
+  background-color: inherit; }
+  @media (min-width: 56.25rem) {
+    .nav-list .nav-list-item:not(:first-child) > .nav-list-progress-indicator .progress::before {
+      height: calc(1rem - 50%); } }
+
+/* Line after indicator */
+.nav-list .nav-list-item:not(:last-child) > .nav-list-progress-indicator .progress::after {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 2px;
+  height: calc(1.5rem - 50%);
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1px);
+  background-color: inherit; }
+  @media (min-width: 56.25rem) {
+    .nav-list .nav-list-item:not(:last-child) > .nav-list-progress-indicator .progress::after {
+      height: calc(1rem - 50%); } }
