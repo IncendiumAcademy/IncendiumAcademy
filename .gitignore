@@ -8,5 +8,6 @@ _site
 .sass-cache
 node_modules
 .idea
+.vscode
 assets/js/main-bundle.js
 assets/js/main-bundle.js.LICENSE.txt
