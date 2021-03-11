@@ -6781,7 +6781,7 @@ html, body {
 .main-header {
   font-size: 42px !important;
   line-height: 1.25;
-  font-weight: 300; }
+  font-weight: 400; }
   @media (min-width: 31.25rem) {
     .main-header {
       font-size: 48px !important; } }

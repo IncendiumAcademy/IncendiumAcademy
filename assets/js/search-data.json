@@ -155,65 +155,65 @@
     "url": "/",
     "relUrl": "/"
   },"26": {
-    "doc": "Sequences and Series",
-    "title": "Sequences and Series",
-    "content": " ",
-    "url": "/content/math/algebra/sequences-and-series/",
-    "relUrl": "/content/math/algebra/sequences-and-series/"
-  },"27": {
-    "doc": "Functional Equations",
-    "title": "Functional Equations",
-    "content": " ",
-    "url": "/content/math/algebra/functional-equations/",
-    "relUrl": "/content/math/algebra/functional-equations/"
-  },"28": {
-    "doc": "Systems of Equations",
-    "title": "Systems of Equations",
-    "content": " ",
-    "url": "/content/math/algebra/system-of-equations/",
-    "relUrl": "/content/math/algebra/system-of-equations/"
-  },"29": {
-    "doc": "Algebra",
-    "title": "Algebra",
-    "content": " ",
-    "url": "/content/math/algebra/",
-    "relUrl": "/content/math/algebra/"
-  },"30": {
     "doc": "Analytic Geometry",
     "title": "Analytic Geometry",
     "content": " ",
     "url": "/content/math/geometry/analytic-geometry/",
     "relUrl": "/content/math/geometry/analytic-geometry/"
-  },"31": {
+  },"27": {
     "doc": "Circle Geometry",
     "title": "Circle Geometry",
     "content": " ",
     "url": "/content/math/geometry/circle-geometry/",
     "relUrl": "/content/math/geometry/circle-geometry/"
-  },"32": {
+  },"28": {
     "doc": "Geometry",
     "title": "Geometry",
     "content": " ",
     "url": "/content/math/geometry/",
     "relUrl": "/content/math/geometry/"
-  },"33": {
+  },"29": {
     "doc": "Basic Principles and Techniques",
     "title": "Basic Principles and Techniques",
     "content": " ",
     "url": "/content/math/combinatorics/basic-counting/",
     "relUrl": "/content/math/combinatorics/basic-counting/"
-  },"34": {
+  },"30": {
     "doc": "Hall's Marriage Theorem",
     "title": "Hall's Marriage Theorem",
     "content": " ",
     "url": "/content/math/combinatorics/hall-marriage-theorem/",
     "relUrl": "/content/math/combinatorics/hall-marriage-theorem/"
-  },"35": {
+  },"31": {
     "doc": "Combinatorics",
     "title": "Combinatorics",
     "content": " ",
     "url": "/content/math/combinatorics/",
     "relUrl": "/content/math/combinatorics/"
+  },"32": {
+    "doc": "Functional Equations",
+    "title": "Functional Equations",
+    "content": " ",
+    "url": "/content/math/algebra/functional-equations/",
+    "relUrl": "/content/math/algebra/functional-equations/"
+  },"33": {
+    "doc": "Systems of Equations",
+    "title": "Systems of Equations",
+    "content": " ",
+    "url": "/content/math/algebra/system-of-equations/",
+    "relUrl": "/content/math/algebra/system-of-equations/"
+  },"34": {
+    "doc": "Sequences and Series",
+    "title": "Sequences and Series",
+    "content": " ",
+    "url": "/content/math/algebra/sequences-and-series/",
+    "relUrl": "/content/math/algebra/sequences-and-series/"
+  },"35": {
+    "doc": "Algebra",
+    "title": "Algebra",
+    "content": " ",
+    "url": "/content/math/algebra/",
+    "relUrl": "/content/math/algebra/"
   },"36": {
     "doc": "Math",
     "title": "Math",
@@ -239,29 +239,29 @@
     "url": "/content/physics/",
     "relUrl": "/content/physics/"
   },"40": {
-    "doc": "Introduction",
-    "title": "Introduction",
-    "content": "This unit is an introduction to the basic concepts required to understand organic chemistry. ",
-    "url": "/content/chemistry/organic-chemistry/introduction/",
-    "relUrl": "/content/chemistry/organic-chemistry/introduction/"
-  },"41": {
-    "doc": "Organic Chemistry",
-    "title": "Organic Chemistry",
-    "content": "This unit is critical to understanding carbon-based compounds and their interactions. ",
-    "url": "/content/chemistry/organic-chemistry/",
-    "relUrl": "/content/chemistry/organic-chemistry/"
-  },"42": {
     "doc": "Rates and Kinetics",
     "title": "Rates and Kinetics",
     "content": "This unit is critical to understanding the mechanisms behind chemical reactions. Rates and Kinetics are the study of the rates of reactions, and the different factors that affect it. If thermodynamics is about the direction of a chemical process, rates and kinetics can be seen as the time it takes to complete. ",
     "url": "/content/chemistry/physical-chemistry/rates-kinetics/",
     "relUrl": "/content/chemistry/physical-chemistry/rates-kinetics/"
-  },"43": {
+  },"41": {
     "doc": "Physical Chemistry",
     "title": "Physical Chemistry",
     "content": "The Physical Chemistry section explore the applications of the theories seen in physics within chemical systems. Because of the strong crossover between physics, some content here may be similar to material in the physics catalogue. ",
     "url": "/content/chemistry/physical-chemistry/",
     "relUrl": "/content/chemistry/physical-chemistry/"
+  },"42": {
+    "doc": "Introduction",
+    "title": "Introduction",
+    "content": "This unit is an introduction to the basic concepts required to understand organic chemistry. ",
+    "url": "/content/chemistry/organic-chemistry/introduction/",
+    "relUrl": "/content/chemistry/organic-chemistry/introduction/"
+  },"43": {
+    "doc": "Organic Chemistry",
+    "title": "Organic Chemistry",
+    "content": "This unit is critical to understanding carbon-based compounds and their interactions. ",
+    "url": "/content/chemistry/organic-chemistry/",
+    "relUrl": "/content/chemistry/organic-chemistry/"
   },"44": {
     "doc": "Chemistry",
     "title": "Chemistry",
