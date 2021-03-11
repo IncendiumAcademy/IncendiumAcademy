@@ -6,13 +6,27 @@ import Modal from "./modal";
 import { auth } from "./auth";
 import { db } from "./database";
 
+/**
+ * Logout button to sign user out
+ */
+function showLogoutBtn() {
+  document.querySelector('.aux-nav-list').innerHTML = `
+      <li class="aux-nav-list-item">
+        <a href="#" class="site-button" id="logoutBtn">Logout</a>
+      </li>
+      `;
+
+  document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+      window.location.reload();
+    });
+  });
+}
+
 window.addEventListener("load", () => {
   const authModal = new Modal("authModal");
 
-  // Logout button
-  document.getElementById("logoutBtn")?.addEventListener("click", () => {
-    auth.signOut();
-  });
   // Submit login form
   authModal.modal
     .querySelector("#loginForm")
@@ -44,11 +58,11 @@ window.addEventListener("load", () => {
         });
       }
     });
+
   // Submit signup form
   authModal.modal
     .querySelector("#signupForm")
     .addEventListener("submit", (e) => {
-      // console.log("sign up");
       e.preventDefault();
       let name = e.target.name.value;
       let email = e.target.email.value;
@@ -58,12 +72,12 @@ window.addEventListener("load", () => {
         .forEach((el) => el.remove());
 
       // Validate
-      if (email == "" || !auth.validateEmail(email)) {
+      if (email === "" || !auth.validateEmail(email)) {
         e.target.email.insertAdjacentHTML(
           "afterend",
           `<sub class="errormsg">Please enter a valid email address.</sub>`
         );
-      } else if (password == "" || !auth.validatePassword(password)) {
+      } else if (password === "" || !auth.validatePassword(password)) {
         e.target.password.insertAdjacentHTML(
           "afterend",
           `<sub class="errormsg">Password must contain at least one uppercase letter, one lowercase letter, one number, and one speecial symbol (@,$,!,%,*,?,&,#).</sub>`
@@ -78,29 +92,19 @@ window.addEventListener("load", () => {
   });
 
   auth.onAuthStateChanged((user) => {
-    // console.log("auth changed");
     if (user) {
-      // console.log("user");
       authModal.hide();
-      // document.getElementById("status").innerHTML = `
-      //     ID: ${user.uid}<br>
-      //     Anonymous: ${user.isAnonymous}<br>
-      //     Name: ${user.displayName || user.providerData[0]?.displayName}<br>
-      //     Email: ${user.email}<br>
-      //     Email Verified: ${user.emailVerified}
-      //   `;
+      if(!user.isAnonymous) showLogoutBtn();
       db.initialize(user.uid);
       db.updateDOM();
     } else {
-      // document.getElementById("status").innerText = "Not logged in.";
       db.uninitialize();
-      auth.signInAnonymously();
-      return;
     }
     auth.getRedirectResult();
   });
 
-  document.getElementById("userData")?.addEventListener("change", (e) => {
-    db.updateProgress({ [e.target.name]: e.target.checked });
+  document.getElementById("progress_select")?.addEventListener("change", async (e) => {
+    if(!auth.currentUser) await auth.signInAnonymously();
+    db.updateProgress( e.target.name, e.target.value );
   });
 });

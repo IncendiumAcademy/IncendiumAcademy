@@ -1,0 +1,103 @@
+$pi: 3.14159265358979;
+
+.nav-list-item > a {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+}
+
+.site-nav > .nav-list > .nav-list-item > .nav-list > .nav-list-item {
+  margin-left: $nav-list-item-height-sm / 2;
+
+  @include mq(md) {
+    margin-left: $nav-list-item-height / 2;
+  }
+}
+
+.nav-list .nav-list-item .nav-list-progress-indicator {
+  width: $nav-list-item-height-sm;
+  height: $nav-list-item-height-sm;
+  padding: #{$nav-list-item-height-sm / 3};
+  position: absolute;
+  left: -$nav-list-item-height-sm / 2;
+
+  @include mq(md) {
+    display: block;
+    width: $nav-list-item-height;
+    height: $nav-list-item-height;
+    padding: #{$nav-list-item-height / 3};
+    left: 0;
+  }
+
+  .progress {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4d4d4d;
+    background-image: url("/assets/images/incomplete.svg");
+    position: relative;
+
+    &.in-progress {
+      background-color: #edb041;
+      background-image: url("/assets/images/inprogress.svg");
+    }
+    &.complete {
+      background-color: #00aa39;
+      background-image: url("/assets/images/complete.svg");
+    }
+  }
+
+  .progress-ring {
+    display: block;
+  }
+  .progress-ring__circle {
+    transition: stroke-dashoffset 0.2s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    $circumference: #{214 * 2 * $pi};
+    --percent: 0;
+    stroke-dasharray: $circumference $circumference;
+    stroke-dashoffset: calc(#{$circumference} - var(--percent) / 100 * #{$circumference});
+
+    &.complete {
+      fill: #00aa39;
+      stroke: #00aa39;
+    }
+  }
+}
+
+/* Line before indicator */
+.nav-list .nav-list-item:not(:first-child) > .nav-list-progress-indicator .progress::before {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 2px;
+  height: calc(#{$nav-list-item-height-sm / 2} - 50%);
+  position: absolute;
+  bottom: 100%;
+  left: calc(50% - 1px);
+  background-color: inherit;
+
+  @include mq(md) {
+    height: calc(#{$nav-list-item-height / 2} - 50%);
+  }
+}
+
+/* Line after indicator */
+.nav-list .nav-list-item:not(:last-child) > .nav-list-progress-indicator .progress::after {
+  content: "";
+  margin: 0;
+  padding: 0;
+  width: 2px;
+  height: calc(#{$nav-list-item-height-sm / 2} - 50%);
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 1px);
+  background-color: inherit;
+
+  @include mq(md) {
+    height: calc(#{$nav-list-item-height / 2} - 50%);
+  }
+}

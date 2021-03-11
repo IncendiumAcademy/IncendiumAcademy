@@ -4,6 +4,12 @@ mjx-container {
   max-width: 100%;
 }
 
+#progress_select {
+  margin-top: 1.5rem;
+  border-radius: $border-radius;
+  padding: 0.5rem 1rem;
+}
+
 details{
     padding-left:1%;
     border-left: 2px solid $link-color;
