@@ -75,7 +75,7 @@ If there are $6$ ways to get from $A$ to $B$ and $9$ ways to get from $B$ to $C$
 <details>
     <summary> Solution </summary>
     <p>
-        This is another straightforward application of the multiplcation principle. The total number of ways to get from $A$ to $C$ will be $6\times 9=63$.
+        This is another straightforward application of the multiplication principle. The total number of ways to get from $A$ to $C$ will be $6\times 9=63$.
     </p>
 </details>
 
