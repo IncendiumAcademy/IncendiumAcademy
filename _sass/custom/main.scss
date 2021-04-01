@@ -97,6 +97,9 @@
 }
 
 .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
   text-align: center;
   padding: 7% 14%;
 }
@@ -330,6 +333,18 @@
       background-image: initial;
       box-shadow: initial;
     }
+  }
+}
+
+#logoutBtn {
+  display: none;
+}
+.logged-in {
+  #logoutBtn {
+    display: flex;
+  }
+  #loginBtn, #signupBtn {
+    display: none;
   }
 }
 

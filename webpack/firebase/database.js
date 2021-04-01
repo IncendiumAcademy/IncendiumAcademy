@@ -37,7 +37,7 @@ class _Database {
     return (await this.db.get()).data();
   }
 
-  async updateDOM() {
+  async updateSidebar() {
     let progress = (await this.db.collection("lessons").get()).docs.reduce(
       (docs, doc) => {
         docs[doc.id] = doc.data().progress
@@ -118,7 +118,7 @@ class _Database {
       .collection("lessons")
       .doc(this._convertPath(name))
       .set({ progress: progress }, { merge: true })
-      .then(() => this.updateDOM());
+      .then(() => this.updateSidebar());
   }
 
   delete() {

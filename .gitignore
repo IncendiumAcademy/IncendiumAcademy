@@ -9,5 +9,4 @@ _site
 node_modules
 .idea
 .vscode
-assets/js/main-bundle.js
-assets/js/main-bundle.js.LICENSE.txt
+*bundle.js*

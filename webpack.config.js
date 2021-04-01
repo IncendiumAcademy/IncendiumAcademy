@@ -1,9 +1,14 @@
 const path = require("path");
 
 module.exports = {
-  entry: path.join(__dirname, "webpack", "main"),
+  context: path.join(__dirname, "webpack"),
+  entry: {
+    global: "./global.js",
+    home: "./home.js",
+    sidebar: "./sidebar.js",
+  },
   output: {
-    filename: "[name]-bundle.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "assets/js"),
   },
   module: {

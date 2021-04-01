@@ -88,12 +88,19 @@ class _Auth {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().useDeviceLanguage();
 
-    firebase
-      .auth()
-      .currentUser.linkWithRedirect(provider)
+    if(auth.currentUser) {
+      firebase
+        .auth()
+        .currentUser.linkWithRedirect(provider)
+        .catch(function (error) {
+          console.error(error.code, error.message);
+        });
+    } else {
+      firebase.auth().signInWithRedirect(provider)
       .catch(function (error) {
         console.error(error.code, error.message);
       });
+    }
   }
 
   /**

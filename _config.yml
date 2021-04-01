@@ -27,6 +27,12 @@ collections:
   members:
     output: false
 
+defaults:
+  - scope:
+      path: "content"
+    values:
+      scripts: "sidebar"
+
 exclude:
   - "Gemfile"
   - "Gemfile.lock"
@@ -96,6 +102,8 @@ aux_links:
     - "#authModal"
   "Sign Up":
     - "#authModal"
+  "Logout":
+    - "#"
 
 # Makes Aux links open in a new tab. Default is false
 aux_links_new_tab: false
