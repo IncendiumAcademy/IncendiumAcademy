@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   context: path.join(__dirname, "webpack"),
@@ -34,4 +34,4 @@ module.exports = {
   resolve: {
     extensions: [".json", ".js", ".jsx"],
   },
-};
+}

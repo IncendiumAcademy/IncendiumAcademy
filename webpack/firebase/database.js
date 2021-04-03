@@ -38,13 +38,23 @@ class _Database {
   }
 
   async updateSidebar() {
-    let progress = (await this.db.collection("lessons").get()).docs.reduce(
-      (docs, doc) => {
-        docs[doc.id] = doc.data().progress
-        return docs
-      },
-      {}
-    );
+    let subject = window.location.pathname.split("/")[2];
+
+    let progress = (
+      await this.db
+        .collection("lessons")
+        .where("__name__", ">=", subject)
+        .where(
+          "__name__",
+          "<",
+          subject.slice(0, -1) +
+            String.fromCharCode(subject.charCodeAt(subject.length - 1) + 1)
+        )
+        .get()
+    ).docs.reduce((docs, doc) => {
+      docs[doc.id] = doc.data().progress
+      return docs
+    }, {})
 
     // object to store the completion %s
     let completion_percentages = {}
@@ -61,25 +71,20 @@ class _Database {
       let lesson_categories = this._convertID(lessonID).split('/').slice(0, -2).join('/') + "/"
 
       // Calculates a completion score for lesson
-      if (typeof completion_percentages[lesson_categories] === "undefined"){ // isNaN(completion_percentages[lesson_categories])
+      if (typeof completion_percentages[lesson_categories] === "undefined"){
         completion_percentages[lesson_categories] = {
-          "sum": formula[progress],
-          "total": 1
+          sum: formula[progress],
         }
       } else {
         completion_percentages[lesson_categories]["sum"] += formula[progress]
-        completion_percentages[lesson_categories]["total"] += 1
       }
 
       // Sets sidebar progress
-      try{
-        document.querySelector(
-          `#site-nav .progress[name="${this._convertID(lessonID)}"]`
-        ).className = `progress ${progress}`;
-      }catch (e){
-        // console.error(lessonID, e)
-      }
+      document.querySelector(
+        `#site-nav .progress[name="${this._convertID(lessonID)}"]`
+      )?.classList.add(progress);
 
+      // If on the lesson page
       if (lessonID === this._convertPath(window.location.pathname)) {
 
         // Sets dropdown progress
@@ -95,6 +100,15 @@ class _Database {
         }
       }
     })
+
+    // Set totals for each category
+    Object.entries(completion_percentages).forEach(
+      ([key, value]) =>
+        (value.total = document.querySelectorAll(
+          `#site-nav #nav-list-head .nav-list-item a[href="${key}"] + .nav-list .nav-list-item`
+        ).length)
+    );
+
 
     // Updates the progress % circles to reflect the progress completed for each category
     for(let key in completion_percentages){

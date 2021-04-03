@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
   const progressSelectEl = document.getElementById("progress_select");
 
   // Update database when progress changes
-  progressSelectEl.addEventListener("change", async (e) => {
+  progressSelectEl?.addEventListener("change", async (e) => {
     if (!auth.currentUser) await auth.signInAnonymously();
     db.updateProgress(e.target.name, e.target.value);
   });
