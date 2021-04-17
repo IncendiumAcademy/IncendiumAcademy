@@ -1,4 +1,9 @@
+/** Class repsenting a modal. */
 export default class Modal {
+  /**
+   * Create a modal.
+   * @param {String} id The id of the modal element.
+   */
   constructor(id) {
     this.modal = document.getElementById(id);
 
@@ -17,6 +22,10 @@ export default class Modal {
     });
   }
 
+  /**
+   * Show the modal and open the tagb with id tabID.
+   * @param {String} tabID The id of the tab to show in the modal.
+   */
   show(tabID) {
     this.modal.classList.add('visible');
     this.modal.querySelector(`.tab-content > #${tabID}`).style.display =
@@ -31,6 +40,9 @@ export default class Modal {
       .classList.remove("active");
   }
 
+  /**
+   * Hide the modal.
+   */
   hide() {
     this.modal.classList.remove('visible');
     this.modal.querySelectorAll("input").forEach((input) => (input.value = ""));

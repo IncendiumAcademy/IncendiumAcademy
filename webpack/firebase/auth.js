@@ -13,9 +13,10 @@ const FIREBASE_CONFIG = {
   appId: "1:941896137375:web:75ea163837beb0a42800aa",
 };
 
+/** Wrapper class to use various firebase.auth() methods. */
 class _Auth {
   /**
-   * Auth class for authenticating users using Firebase
+   * Creat an Auth instance.
    */
   constructor() {
     firebase.initializeApp(FIREBASE_CONFIG);
@@ -24,7 +25,7 @@ class _Auth {
   /**
    * Validates user's email and ensures that it follows correct conventions (name@email.com)
    *
-   * @param {string} email  User's email address
+   * @param {String} email  User's email address
    * @returns {boolean}     Whether email is valid or not
    */
   validateEmail(email) {

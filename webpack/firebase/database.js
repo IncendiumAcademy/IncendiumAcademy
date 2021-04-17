@@ -1,9 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-/**
- * Database class, handles db-related functions and updates progress tracking
- */
+/** Wrapepr class for firebase.firestore() methods. */
 class _Database {
   /**
    * Initializes DB
@@ -37,6 +35,9 @@ class _Database {
     return (await this.db.get()).data();
   }
 
+  /**
+   * Updates the DOM in the sidebar.
+   */
   async updateSidebar() {
     let subject = window.location.pathname.split("/")[2];
 
@@ -127,6 +128,11 @@ class _Database {
     }
   }
 
+  /**
+   * Update the progress of a specific lesson in the database.
+   * @param {String} name The path to the lesson.
+   * @param {String} progress The progress to set it to.
+   */
   updateProgress(name, progress) {
     this.db
       .collection("lessons")
@@ -135,15 +141,28 @@ class _Database {
       .then(() => this.updateSidebar());
   }
 
+  /**
+   * Deletes the user from the database.
+   */
   delete() {
     this.db.delete();
   }
 
+  /**
+   * Converts a lesson path to a format that matches the database.
+   * @param {String} path The path to the current lesson.
+   * @returns A converted path that matches the format of the database.
+   */
   _convertPath(path) {
     let new_path = path.split("/");
     return new_path.slice(2, new_path.length - 1).join("\\");
   }
 
+  /**
+   * Converts an ID from the database into a path on the website.
+   * @param {String} id The id of a lesson in the database.
+   * @returns The path to the lesson.
+   */
   _convertID(id) {
     return "/content/" + id.replace(/\\/g, "/") + "/";
   }
